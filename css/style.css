@@ -12,6 +12,9 @@ body.hidden-scrolling {
 a {
     text-decoration: none;
 }
+button a {
+    color: white;
+}
 .navbar_1 {
     padding: 1.0rem 5.0rem;
     background-color: #F5F3FB;
@@ -39,460 +42,6 @@ a {
     color: rgb(0, 110, 255);
 }
 
-.navbar_2 {
-    position: relative;
-    background-color: white;
-    width: 100%;
-    height: 0rem;
-    left: 0;
-    top: 0;
-    z-index: 999;
-}
-.menu-bar {
-    position: relative;
-    background-color: #25166F;
-    width: 100%;
-    height: 5rem;
-    margin-bottom: 3rem;
-    left: 0;
-    top: 0;
-    z-index: 999;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.082);
-}
-
-.fixed-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 5rem;
-    width: 100%;
-    background-color: #25166F;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.082);
-    z-index: 999;
-}
-
-.navbar-container{
-    padding: 1.5rem 5.0rem;
-    display: flex;
-    /* justify-content: space-between; */
-    align-items: center;
-
-}
-.navbar_List > .list_item {
-display: inline-block;
-margin-right: 30px;
-position: relative;
-}
-.navbar_List > .list_item > a {
-display: block;
-font-size: 17px;
-color: #fff;
-font-weight: 600;
-padding: 10px 0;
-transition: all .3s ease;
-display: flex;
-gap: .2rem;
-align-items: center;
-}
-/* .active-list-item {
-background-color: blue;
-} */
-.navbar_List > .list_item > a .plus {
-    display: inline-block;
-    height: 12px;width: 12px;
-    /* background-color: red; */
-    position: relative;
-}
-.navbar_List > .list_item > a .plus::before,
-.navbar_List > .list_item > a .plus::after {
-   content: "";
-   position: absolute;
-   box-sizing: border-box;
-   left: 50%;
-   top: 50%;
-   background-color: #fff;
-   height: 2px;
-   width: 100%;
-   transform: translate(-50%, -50%);
-   transition: all .3s ease;
-}
-.navbar_List > .list_item:hover > a .plus::before,
-.navbar_List > .list_item:hover > a .plus::after {
-    background-color: skyblue;
-}
-.navbar_List > .list_item > a .plus::after {
-    transform: translate(-50%, -50%) rotate(-90deg);
-}
-.navbar_List > .list_item > .sub_menu > .list_item > a:hover, 
-.navbar_List > .list_item:hover > a {
-color:  skyblue;
-}
-.navbar_List > .list_item > .sub_menu {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    width: 320px;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #25166F;
-    padding: 10px 0;
-    border-top: 3px solid skyblue;
-    transform: translateY(13px);
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-@media (min-width:768px) {
-    .navbar_List > .dropdown:hover > .sub_menu {
-        transform: translateY(0px);
-        opacity: 1;
-        visibility: visible;
-    }
-    .navbar_List > .dropdown:hover > a .plus::after {
-       transform: translate(-50%, -50%) rotate(0deg);
-    }
-}
-
-.navbar_List > .list_item > .sub_menu > .list_item > a {
-    display: block;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #fff;
-    transition: all .3s ease;
-    font-weight: 500;
-}
-.open-nav-menu {
-    position: absolute;
-    cursor: pointer;
-    right: 3rem;
-    top: 2rem;
-    display: none;
-    align-items: center;
-}
-.close-nav-menu {
-    background-color: #ffffff;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    width: 2rem;height: 2rem;
-    cursor: pointer;
-    /* display: none; */
-}
-.fa-times {
-    color: blue;
-}
-
-
-/*=========================== SLIDER CSS ================================*/
-.slider1 {
-    background:linear-gradient(to bottom, rgba(7, 7, 7, 0.711), rgba(7, 7, 7, 0.711), rgb(1, 20, 71)), url(../images/slider1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 90vh;
-    display: grid;
-    place-items: center;
-    position: relative;
-}
-.slider2 {
-    background:linear-gradient(to bottom, rgba(7, 7, 7, 0.711), rgba(7, 7, 7, 0.711), rgb(1, 20, 71)), url(../images/slider2.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 90vh;
-    display: grid;
-    place-items: center;
-    position: relative;
-}
-.slider3 {
-    background:linear-gradient(to bottom, rgba(7, 7, 7, 0.711), rgba(7, 7, 7, 0.711), rgb(1, 20, 71)), url(../images/slider3.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 90vh;
-    display: grid;
-    place-items: center;
-    position: relative;
-}
-.slider4 {
-    background:linear-gradient(to bottom, rgba(7, 7, 7, 0.711), rgba(7, 7, 7, 0.711), rgb(1, 20, 71)), url(../images/slider4.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 90vh;
-    display: grid;
-    place-items: center;
-    position: relative;
-}
-
-.owl-dots {
-    position: absolute;
-    top: 85%;
-    left: 35%;
-    width: 30vw;
-    margin: 0 auto;
-}
-.owl-dot {
-    margin-left: .7rem;
-}
-
-.owl-dot:hover, 
-.owl-dot.active {
-    background-color: #082D57 !important;
-    border-radius: 50%;
-}
-.home_banner_text {
-    width: 50vw;
- }
- .home_banner_text h1 {
-    text-align: center;
-    color: white;
-    font-size: 2.7rem;
-    margin-bottom: 1rem;
- }
- .home_banner_text p {
-    text-align: center;
-    color: #F6F6F6;
-    font-size: 1.15rem;
-    margin-bottom: 3rem;
-    word-spacing: 3px;
- }
- .home_banner_text a, .question .apply-btn {
- display: flex;
- align-items: center;
- justify-content: center;
- margin: 1.5rem auto;
- width: 15rem;
- font-size: 1.2rem;
-  text-align: center;
-  background-color: #1464C2;
-  color: aliceblue;
-  padding: 1rem;
-  cursor: pointer;
-  border: none;
- }
-/*=========================== ABOUT SECTION  CSS ================================*/
-.about {
-    margin: 0 auto;
-    width: 80vw;
-    padding: 5rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-.about-img {
-    height: 25rem;
-}
-.about-img img {
-    height: 100%;
-    width: 100%;
-}
-.about-container, .mission-vision {
-    display: grid;
-    gap: 2rem;
-    width: 40vw;
-    min-width: 20rem;
-}
-.about-container p {
-    font-size: 1.1rem;
-    text-align: justify;
-}
-.mission-vision h3 {
-    margin-bottom: 1.5rem;
-}
-/*=========================== PROGRAMMES SECTION  CSS ================================*/
-.programmes, .news, .events, .contact, .footer-container {
-    margin: 0 auto;
-    width: 80vw;
-    padding-bottom: 5rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    position: relative;
-}
-.programmes .title h2 {
-    text-align: center;
-    text-transform: uppercase;
-}
-.programmes-container {
-    width: 100%;
-    display: grid;
-    justify-content: center;
-    gap: 2rem;
-}
-.programmes-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-.programme {
-    width: 20rem;
-}
-.programme-img img {
-    width: 100%;
-    border-radius: 10px;
-}
-.programme-info {
-    margin: 1.5rem 0;
-}
-.programme-info h3 {
-    margin-bottom: .5rem;
-}
-.programme-info p {
-    margin-bottom: .5rem;
-    font-size: 1.1rem;
-    text-align: justify;
-}
-.programme-info a {
-    font-size: 1.1rem;
-    text-align: justify;
-}
-/*======================= admission section =======================*/
-.certificate-img img {
-    width: 5rem;
-}
-
-/*================== Galler Section Css ===========================*/
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-.gallery img {
-    width: 15rem;
-}
-.programmes button, .news button {
-    width: 7rem;
-    padding: .5rem;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    border-radius: 5px;
-    border: 1px solid blue;
-    background-color: transparent;
-}
-.programmes button a, .news button a, .event-info button a   {
-    color: blue;
-    font-weight: 600;
-}
-/*========================= NEWS SECTION =====================*/
-.news, .events {
-    padding-top: 4rem;
-} 
-.news .title {
-    margin-bottom: 1.5rem;
-}
-.news .title h2 {
-text-align: center;
-text-transform: uppercase;
-}
-.news-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-.news-details {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    width: 35vw;
-    min-width: 18rem;
-}
-.news-text {
-    width: 20vw;
-    min-width: 11rem;
-}
-.news-details p {
-    font-size: 1.1rem;
-    text-align: justify;
-}
-/*========================== EVENT SECTION =====================*/
-.events {
-    background-color: #EEEBF9;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}
-.event-details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 5rem;
-}
-.event-container .title h2, .contact-container .title h2 {
-    margin-bottom: 1.5rem;
-    text-align: center;
-    text-transform: uppercase;
-}
-.event-info {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-.event-info .event {
-    display: flex;
-    gap: 1rem;
-    /* justify-content: center; */
-    align-items: center;
-}
-.event-info .event img {
-    width: 15rem;
-    border-radius: 10px;
-}
-.event-text  {
-display: grid;
-gap: 1rem;
-}
-.event-text  {
-font-size: 1.1rem;
-}
-.event-text i {
-    margin-right: .4rem;
-    color: gray;
-}
-.download-calendar {
-    background-color: #C3B9F1;
-    width: 18rem;
-    padding: 5rem 1rem;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-}
-.download-calendar * {
-   text-align: center;
-   font-size: 1.2rem;
-   margin-bottom: 1rem;
-}
-.download-calendar a {
-    background-color: #1464C2;
-    width: 9rem;
-    padding: .5rem;
-    margin: 0 auto;
-    color: #ffffff;
-    border-radius: 5px;
-}
-.event-info button {
-    width: 7rem;
-    padding: .5rem;
-    border-radius: 5px;
-    border: 1px solid blue;
-    background-color: transparent;
-}
 /*============================ CONTACT SECTION =======================*/
 .contact-info {
     display: flex;
@@ -551,11 +100,7 @@ form button {
 }
 
 /*============================= FOOTER SECTION ====================*/
-.footer {
-    background-color: #25166F;
-    padding: 3rem 0;
-    /* width: 90vw; */
-}
+
 .footer-details {
     display: flex;
     column-gap: 7rem;
@@ -567,31 +112,6 @@ form button {
     color: #C3B9F1;
 }
 
-.about-TuCoE {
-    width: 21vw;
-    min-width: 13rem;
-}
-.about-TuCoE * {
- text-align: justify;
- margin-bottom: .7rem;
-}
-.quick-links-list {
-    display: grid;
-    column-gap: 2rem;
-    row-gap: 1rem;
-    margin-top: 1rem;
-    grid-template-columns: 1fr 1fr;
-}
-.quick-links-list a:hover {
-    color: #ffffff;
-}
-.social-media {
-    display: flex;
-    gap: 1rem;
-}
-.social-media * {
-  color: #ffffff;
-}
 .portal-footer {
     background-color: #EEEBF9;
     padding: 1.5rem 0;
@@ -779,6 +299,21 @@ font-size: 1.2rem;
     padding: 1.5rem 0;
     width: 70vw;
 }
+.personalInfoMenuLinks {
+    display: flex;
+    gap: 3rem;
+    margin: 1.5rem 0;
+    border-bottom: 1px solid grey;
+    width: 53vw;
+}
+.personalInfoMenuLinks a {
+   color: #000;
+   font-size: 18px;
+   padding-bottom: .5rem;
+}
+.activePersonalLink {
+    border-bottom: 2px solid blue;
+}
 .dashboard-profile  {
     display: flex;
     align-items: center;
@@ -791,9 +326,18 @@ font-size: 1.2rem;
 .profile-picture img {
     width: 7rem;
 }
+.portal-picture img {
+    width: 2.5rem;
+}
 .profile-text * {
     padding-bottom: .4rem;
     word-spacing: 4px;
+}
+.admission-text * {
+padding-top: 1rem;
+}
+.admission-text p {
+font-size: 1.1rem;
 }
 .dashboard-result * {
     padding-bottom: 1rem;
@@ -805,19 +349,19 @@ font-size: 1.2rem;
 }
 
 table {
-    border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     margin-top: 1rem;
-    /* border: 1px solid #ddd; */
   }
+table input, table select {
+    width: 10rem;
+    padding: .3rem;
+}
   
-  /* Style table headers and table data */
   th, td {
     text-align: center;
     padding: 16px;
     font-size: 1.1rem;
-    border-bottom: 1px solid #25166F;
   }
   
   th:first-child, td:first-child {
@@ -825,20 +369,7 @@ table {
 
   }
   
-  /* Zebra-striped table rows */
-  tr:nth-child(odd) {
-    background-color: #f2f2f2
-  }
-  /* hover rows */
-  tr:hover:not(tr:first-child) {
-    background-color: rgb(226, 223, 223);
-  }
-  tr:first-child {
-    background-color: #25166F;
-    border-top: 1px solid #25166F;
-    color: white;
 
-  }
   .registration-tabs {
     display: flex;
     gap: 1rem;
@@ -857,13 +388,7 @@ table {
     font-size: 1.1rem;
   }
   
-  .fa-check {
-    color: red;
-  }
-  
-  /* .fa-remove {
-    color: red;
-  } */
+ 
   .form-instruction {
     margin-bottom: 1.5rem;
   }
@@ -877,7 +402,7 @@ table {
  .bioDataForm form {
     width: 65vw;
   }
-  .bioDataForm form input {
+  .bioDataForm form input, .personal-title select {
    width: 31vw;
    min-width: 18rem;
    border: 1px solid #25166F;
@@ -897,7 +422,7 @@ table {
     justify-content: space-between;
   }
   .submit-form button {
-    width: 31vw;
+    width: 27vw;
     min-width: 18rem;
   }
   .search-students {
@@ -962,6 +487,9 @@ table {
   .upload {
     display: flex;
     justify-content: left;
+    width: 30rem;
+    flex-wrap: wrap;
+    gap: 1.0rem;
   }
   .upload-container {
     display: grid;
@@ -971,11 +499,11 @@ table {
     padding: 1.7rem;
     border-radius: 5px;
   }
-  .upload-container button {
+  .upload-doc button {
     text-align: center;
-    padding: .5rem;
+    padding: .3rem;
     border: none;
-    background-color: #3C24B5;
+    background-color: gray;
     color: #fff;
     border-radius: 3px;
   }
