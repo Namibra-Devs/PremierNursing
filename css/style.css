@@ -507,6 +507,20 @@ table input, table select {
     color: #fff;
     border-radius: 3px;
   }
+
+  .applicants_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    column-gap: 2.5rem;
+    width: 70vw;
+    height: 70vh;
+  }
+  .applicants_box {
+    padding: 2rem;
+  }
 /*============================= MEDIA QUERIES ====================*/
 @media (max-width:1200px) {
     .about-img {
