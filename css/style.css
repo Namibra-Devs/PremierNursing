@@ -306,6 +306,13 @@ font-size: 1.2rem;
     border-bottom: 1px solid grey;
     width: 53vw;
 }
+.prospectiveStudentsBar {
+    display: flex;
+    gap: 3rem;
+    margin: 1.5rem 0;
+    /* border-bottom: 1px solid grey; */
+    width: 53vw;
+}
 .personalInfoMenuLinks a {
    color: #000;
    font-size: 18px;
@@ -347,7 +354,23 @@ font-size: 1.1rem;
     overflow-x: visible;
     
 }
-
+.admission-table table th,
+.admission-table table td {
+    border-bottom: 2px solid gray;
+}
+.admission-action {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+.action-details {
+    display: none;
+}
+.action-details-display {
+    display: block;
+}
 table {
     border-spacing: 0;
     width: 100%;
@@ -520,6 +543,10 @@ table input, table select {
   }
   .applicants_box {
     padding: 2rem;
+    border-radius: .5rem;
+  }
+  .applicants_box * {
+    margin-bottom: .5rem;
   }
 /*============================= MEDIA QUERIES ====================*/
 @media (max-width:1200px) {
