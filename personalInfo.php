@@ -1,17 +1,13 @@
 <?php
+$title = "personalInfo";
 include_once('./inc/header.php');
 include_once('./inc/navbar.php');
 include_once('./inc/sidebar.php');
 
+
 ?>
-    <div class="myDashboard">
-       <div class="personalInfoMenuLinks">
-        <a href="personalInfo.html" class="activePersonalLink">Biodata</a>
-        <a href="examinationHistory.html">Examination History</a>
-        <a href="#">Choice of Programme</a>
-        <a href="#">Uploads</a>
-        <a href="#">Summary</a>
-       </div>
+<div class="myDashboard">
+<?php include_once('./inc/navlinks.php') ?>
       <div class="bioDataForm">
         <div class="form-instruction">
         <h3>Personal Information</h3>
@@ -138,7 +134,7 @@ include_once('./inc/sidebar.php');
                </div>
             </div>
             <div class="submit-form">
-                <button type="submit"><a href="examinationHistory.html">Save and Continue</a></button>
+                <button type="submit"><a href="examinationHistory.php">Save and Continue</a></button>
             </div>
         </form>
       </div>

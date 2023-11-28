@@ -1,16 +1,11 @@
 <?php
+$title = "programmeChoice";
 include_once('./inc/header.php');
 include_once('./inc/navbar.php');
 include_once('./inc/sidebar.php');
 ?>
     <div class="myDashboard">
-       <div class="personalInfoMenuLinks">
-        <a href="personalInfo.html">Biodata</a>
-        <a href="examinationHistory.html">Examination History</a>
-        <a href="programmeChoice.html" class="activePersonalLink">Choice of Programme</a>
-        <a href="#">Uploads</a>
-        <a href="#">Summary</a>
-       </div>
+    <?php include_once('./inc/navlinks.php') ?>
        <div class="bioDataForm">
         <div class="form-instruction">
         <h3>Choice of Programme</h3>

@@ -1,820 +1,839 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap");
 body.hidden-scrolling {
-    overflow-y: hidden;
+  overflow-y: hidden;
 }
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
 }
 /*=========================== NAVBARS CSS ================================*/
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 button a {
-    color: white;
+  color: white;
 }
 .navbar_1 {
-    padding: 1.0rem 5.0rem;
-    background-color: #F5F3FB;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+  padding: 1rem 5rem;
+  background-color: #f5f3fb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .logo a img {
-    width: 2rem;
-    height: 2rem;
+  width: 2rem;
+  height: 2rem;
 }
 .portal {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 .portal a {
-   color: black;
-   font-weight: 600;
-   font-family: 'Barlow', sans-serif;
-   font-family: 'Heebo', sans-serif;
-    font-family: 'Lobster Two', cursive;
+  color: black;
+  font-weight: 600;
+  font-family: "Barlow", sans-serif;
+  font-family: "Heebo", sans-serif;
+  font-family: "Lobster Two", cursive;
 }
 .portal a:hover {
-    color: rgb(0, 110, 255);
+  color: rgb(0, 110, 255);
 }
 
 /*============================ CONTACT SECTION =======================*/
 .contact-info {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.contact-details form, .location-calendar iframe, .student-login form {
-    width: 25rem;
+.contact-details form,
+.location-calendar iframe,
+.student-login form {
+  width: 25rem;
 }
 .student-login form {
-    background-color: #FDFDFD;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.144);
-    padding: 1.5rem;
-    border-radius: 10px;
+  background-color: #fdfdfd;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.144);
+  padding: 1.5rem;
+  border-radius: 10px;
 }
 .student-login form {
-    margin: 2rem auto;
+  margin: 2rem auto;
 }
 .student-login form h2 {
-text-align: center;
-margin-bottom: 2.0rem;
-color: #6850DC;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #6850dc;
 }
 .student-login form .forget-password {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 .student-login form p {
-    margin: 1.5rem auto;
+  margin: 1.5rem auto;
 }
 .rest-password form {
-    margin-bottom: 4.5rem;
+  margin-bottom: 4.5rem;
 }
 form .form-label {
-    display: grid;
-    gap: .8rem;
-    margin-bottom: 1.5rem;
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
 }
 .form-label label {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 .form-label input {
-    padding: .6rem;
+  padding: 0.6rem;
 }
 form button {
-    width: 100%;
-    padding: .7rem;
-    background-color: #3C24B5;
-    outline: none;
-    border: none;
-    color: #fff;
-    font-size: 1.1rem;
-    border-radius: 8px;
-    cursor: pointer;
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #3c24b5;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.custom-error {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /*============================= FOOTER SECTION ====================*/
 
 .footer-details {
-    display: flex;
-    column-gap: 7rem;
-    row-gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  column-gap: 7rem;
+  row-gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 .footer * {
-    color: #C3B9F1;
+  color: #c3b9f1;
 }
 
 .portal-footer {
-    background-color: #EEEBF9;
-    padding: 1.5rem 0;
+  background-color: #eeebf9;
+  padding: 1.5rem 0;
 }
 .portal-footer p {
-    color: #454545;
+  color: #454545;
 }
 .footer .copyright {
-    text-align: center;
-    font-family: 'Barlow', sans-serif;
-    font-family: 'Heebo', sans-serif;
-     font-family: 'Lobster Two', cursive;
+  text-align: center;
+  font-family: "Barlow", sans-serif;
+  font-family: "Heebo", sans-serif;
+  font-family: "Lobster Two", cursive;
 }
 
 /* ============================DASHBOARD ==========================*/
 
 .dashboard {
-    display: flex;
-    column-gap: 7rem;
-    overflow: hidden;
-    margin-top: -1rem;
+  display: flex;
+  column-gap: 7rem;
+  overflow: hidden;
+  margin-top: -1rem;
 
-    /* min-height: 100vh; */
+  /* min-height: 100vh; */
 }
 .dashboard-links {
-    /* width: 75vw; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  /* width: 75vw; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .dashboard-links form {
-    background-color: gray;
-    border-radius: 25px;
-    position: relative;
-    width: 14rem;
+  background-color: gray;
+  border-radius: 25px;
+  position: relative;
+  width: 14rem;
 }
-.dashboard-links form input{
-    width: 100%;
-    height: 100%;
-    border-radius: 25px;
-    background-color: rgb(214, 212, 212);
-    font-size: 17px;
-    padding: 5px 25px 5px 15px;
-    border: none;
-    outline: none;
+.dashboard-links form input {
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: rgb(214, 212, 212);
+  font-size: 17px;
+  padding: 5px 25px 5px 15px;
+  border: none;
+  outline: none;
 }
-.dashboard-links form input::placeholder{
-    color: #FFF;
-    font-size: .8rem;
+.dashboard-links form input::placeholder {
+  color: #fff;
+  font-size: 0.8rem;
 }
-.dashboard-links form button{ 
-position: absolute;
-top: 0;
-right: 0;
-width: 50px;
-background-color: rgb(214, 212, 212);
-height: 100%;
-border-radius: 50%;
-cursor: pointer;
-color: #fff;
-border: none;
+.dashboard-links form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  background-color: rgb(214, 212, 212);
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  border: none;
 }
 .dashboard-links .search {
-    display: flex;
-    gap: 1.2rem;
-    align-items: center;
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
 }
 .dashboard-links img {
-    width: 1.5rem;
-    height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 .dashboard {
-    display: flex;
-    column-gap: 4rem;
-    overflow: hidden;
-    margin-top: -1rem;
+  display: flex;
+  column-gap: 4rem;
+  overflow: hidden;
+  margin-top: -1rem;
 
-    /* min-height: 100vh; */
+  /* min-height: 100vh; */
 }
 .sidebar {
-    position: relative;
-    min-height: 87.7vh;
-    width: 250px;
-    margin-top: 1rem;
-    padding: 6px 14px;
-    z-index: 9;
-    transition: all .5s ease-out;
-    background-color: #dbdadabb;
-    box-shadow: 0 10px 0px rgba(0, 0, 0, 0.226);
+  position: relative;
+  min-height: 87.7vh;
+  width: 250px;
+  margin-top: 1rem;
+  padding: 6px 14px;
+  z-index: 9;
+  transition: all 0.5s ease-out;
+  background-color: #dbdadabb;
+  box-shadow: 0 10px 0px rgba(0, 0, 0, 0.226);
 }
 .sidebar_toggle {
   display: none;
 }
 .sidebar img {
-    color: #0000009a;
-    width:30px;
-    /* height: 30px; */
-    font-size: 30px;
-    text-align: center;
-   line-height: 60px;
-   padding-left: 10px;
+  color: #0000009a;
+  width: 30px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
 }
 .sidebar .sidebar-list {
-position: static;
-margin-top: 2.5rem;
-height: 100%; 
-display: flex;
-flex-flow: column;
-gap: 0rem;
-transition-delay: 1s;
+  position: static;
+  margin-top: 2.5rem;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  gap: 0rem;
+  transition-delay: 1s;
 }
 .sidebar li {
-position: relative;
-margin: 8px 0;
+  position: relative;
+  margin: 8px 0;
 }
 .sidebar li a {
-display: flex;
-gap: .7rem;
-align-items: center;
-font-size: 1.2rem;
-padding: 1rem .5rem;
-height: 100%;width: 100%;
-align-items: center;
-text-decoration: none;
-position: relative;
-transition: all .5s ease-out;
-color: #000;
-z-index: 12;
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.5rem;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.5s ease-out;
+  color: #000;
+  z-index: 12;
 }
 .sidebar li a.active-li {
-color: #fff;
+  color: #fff;
 }
 .active-sidebar-list {
-background-color: #25166F;
-border-radius: 5px;
+  background-color: #25166f;
+  border-radius: 5px;
 }
-.sidebar li a .link_name {
-font-weight: 400;
-white-space: nowrap;
-pointer-events: none;
-opacity: 1;
+.sidebar li a .link-name {
+  font-weight: 400;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 1;
 }
 .sidebar li a img.active-li {
-background-color: #fff;
-padding: .5rem;
-border-radius: 50%;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 50%;
 }
-
 
 .sidebar li a::after {
-content: "";
-position: absolute;
-width: 100%;
-height: 100%;
-transform: scaleX(0);
-background-color: #25166F;
-border-radius: 5px;
-transition: all .3s ease-in-out;
-transform-origin: left;
-z-index: -2;
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  background-color: #25166f;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  transform-origin: left;
+  z-index: -2;
 }
-.sidebar li a:hover::after {
-transform: scaleX(1);
+
+.sidebar li a:hover:not(.active)::after {
+  transform: scaleX(1);
 }
+
 .sidebar li a:hover {
-color: #eaebee;
+  color: #eaebee;
 }
 .logout {
-position: absolute;
-bottom: 2rem;
-/* z-index: 99; */
-}  
+  position: absolute;
+  bottom: 2rem;
+  /* z-index: 99; */
+}
 .logout a {
-display: flex;
-gap: .8rem;
-align-items: center;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
 }
 .logout img {
-width: 3rem;
+  width: 3rem;
 }
 .logout span {
-font-size: 1.2rem;
+  font-size: 1.2rem;
 }
 .myDashboard {
-    padding: 1.5rem 0;
-    width: 70vw;
+  padding: 1.5rem 0;
+  width: 70vw;
 }
 .personalInfoMenuLinks {
-    display: flex;
-    gap: 3rem;
-    margin: 1.5rem 0;
-    border-bottom: 1px solid grey;
-    width: 53vw;
+  display: flex;
+  gap: 3rem;
+  margin: 1.5rem 0;
+  border-bottom: 1px solid grey;
+  width: 100%;
 }
 .personalInfoMenuLinks a {
-   color: #000;
-   font-size: 18px;
-   padding-bottom: .5rem;
+  color: #000;
+  font-size: 18px;
+  padding-bottom: 0.5rem;
 }
-.activePersonalLink {
-    border-bottom: 2px solid blue;
+.active-link {
+  border-bottom: 2px solid blue;
 }
-.dashboard-profile  {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 2rem 0;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid gray;
+.dashboard-profile {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 2rem 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid gray;
 }
 .profile-picture img {
-    width: 7rem;
+  width: 7rem;
 }
 .portal-picture img {
-    width: 2.5rem;
+  width: 2.5rem;
 }
 .profile-text * {
-    padding-bottom: .4rem;
-    word-spacing: 4px;
+  padding-bottom: 0.4rem;
+  word-spacing: 4px;
 }
 .admission-text * {
-padding-top: 1rem;
+  padding-top: 1rem;
 }
 .admission-text p {
-font-size: 1.1rem;
+  font-size: 1.1rem;
 }
-.dashboard-result * {
-    padding-bottom: 1rem;
-}
-.result-table, .ledger-table * {
-    width: 70vw;
-    overflow-x: visible;
-    
+/* .dashboard-result * {
+  padding-bottom: 1rem;
+} */
+.result-table,
+.ledger-table * {
+  width: 70vw;
+  overflow-x: visible;
 }
 
 table {
-    border-spacing: 0;
-    width: 100%;
-    margin-top: 1rem;
-  }
-table input, table select {
-    width: 10rem;
-    padding: .3rem;
+  border-spacing: 0;
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
-  
-  th, td {
-    text-align: center;
-    padding: 16px;
-    font-size: 1.1rem;
-  }
-  
-  th:first-child, td:first-child {
-    text-align: left;
+table input,
+table select {
+  width: 10rem;
+  padding: 0.3rem;
+}
 
-  }
-  
+th,
+td {
+  text-align: center;
+  padding: 16px;
+  font-size: 1.1rem;
+}
 
-  .registration-tabs {
-    display: flex;
-    gap: 1rem;
-    margin: 1rem 0;
+th:first-child,
+td:first-child {
+  text-align: left;
+}
+
+.registration-tabs {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.active-tab {
+  color: darkblue;
+  border-bottom: 1px solid blue;
+}
+.registration-tabs a {
+  font-size: 1.1rem;
+  color: black;
+}
+.notice * {
+  margin-bottom: 0.2rem;
+  font-size: 1.1rem;
+}
+
+.form-instruction {
+  margin-bottom: 1.5rem;
+}
+.form-instruction * {
+  margin-bottom: 1rem;
+}
+.bioDataForm form * {
+  margin-bottom: 0.8rem;
+}
+
+.bioDataForm form {
+  width: 65vw;
+}
+.bioDataForm form input,
+.personal-title select {
+  width: 31vw;
+  min-width: 18rem;
+  border: 1px solid #25166f;
+  padding: 0.6rem;
+  border-radius: 5px;
+}
+.bioDataForm form input:focus {
+  border: 1px solid #25166f;
+}
+.bioDataForm .personal-title,
+.form-group div {
+  display: grid;
+}
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+.submit-form button , .submit-form input{
+  width: 27vw;
+  min-width: 18rem;
+}
+.search-students {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin: 1rem 0.5rem 1rem 0;
+}
+.search-students .search-bar input[type="text"] {
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url(../images/search.png);
+  background-position: 10px 10px;
+  background-size: 1.4rem;
+  background-repeat: no-repeat;
+  padding: 8px 20px 8px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+.search-students .search-bar input[type="text"]:focus {
+  width: 100%;
+}
+.courses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.courses .course {
+  background-color: #f4d96c;
+  padding: 1rem;
+  border-radius: 5px;
+  color: black;
+}
+.department-course {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 11rem;
+}
+.student-population {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+.student-population p {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  gap: 3px;
+}
+.upload {
+  display: flex;
+  justify-content: left;
+  width: 30rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.upload-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: #eeebf9;
+  padding: 1.7rem;
+  border-radius: 5px;
+}
+.upload-doc button {
+  text-align: center;
+  padding: 0.3rem;
+  border: none;
+  background-color: gray;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.applicants_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  column-gap: 2.5rem;
+  width: 70vw;
+  height: 70vh;
+}
+.applicants_box {
+  padding: 2rem;
+}
+/*============================= MEDIA QUERIES ====================*/
+@media (max-width: 1200px) {
+  .about-img {
+    height: 23rem;
+    width: 20rem;
   }
-  .active-tab {
-    color: darkblue;
-    border-bottom: 1px solid blue;
+  .programmes-details {
+    gap: 1.8rem;
   }
-  .registration-tabs a {
-   font-size: 1.1rem;
-   color: black;
+  .programme {
+    width: 16rem;
   }
-  .notice * {
-    margin-bottom: .2rem;
-    font-size: 1.1rem;
+  .result-table,
+  .ledger-table {
+    width: 60vw;
+    overflow-x: auto;
   }
-  
- 
-  .form-instruction {
-    margin-bottom: 1.5rem;
+}
+@media (max-width: 991px) {
+  .about {
+    width: 90vw;
   }
-  .form-instruction * {
-    margin-bottom: 1.0rem;
+  .title {
+    font-size: 1.2rem;
   }
-  .bioDataForm form * {
-    margin-bottom: .8rem;
-  } 
- 
- .bioDataForm form {
-    width: 65vw;
+  .about-img {
+    height: 22rem;
+    width: 16rem;
   }
-  .bioDataForm form input, .personal-title select {
-   width: 31vw;
-   min-width: 18rem;
-   border: 1px solid #25166F;
-   padding: .6rem;
-   border-radius: 5px;
+  .about-container,
+  .mission-vision {
+    min-width: 19rem;
   }
-  .bioDataForm form input:focus {
-    border: 1px solid #25166F;  
+  .programmes-details {
+    gap: 1.6rem;
   }
-  .bioDataForm .personal-title, .form-group div {
-    display: grid;
+  .programme {
+    width: 16rem;
   }
-  .form-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .5rem;
-    justify-content: space-between;
+  .result-table,
+  .ledger-table {
+    width: 60vw;
+    overflow-x: auto;
   }
-  .submit-form button {
-    width: 27vw;
+  .bioDataForm form {
+    width: 55vw;
+  }
+  .bioDataForm form input {
+    width: 25vw;
     min-width: 18rem;
   }
-  .search-students {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-    margin: 1rem .5rem 1rem 0;
+  .submit-form button {
+    width: 25vw;
+    min-width: 18rem;
   }
-  .search-students .search-bar input[type=text] {
-    width: 200px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url(../images/search.png);
-    background-position: 10px 10px; 
-    background-size: 1.4rem;
-    background-repeat: no-repeat;
-    padding: 8px 20px 8px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-  }
-  
-  /* When the input field gets focus, change its width to 100% */
-  .search-students .search-bar input[type=text]:focus {
-    width: 100%;
-  }
-  .courses {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.0rem;
-  }
-  .courses .course {
-    background-color: #F4D96C;
-    padding: 1rem;
-    border-radius: 5px;
-    color: black;
-  }
-  .department-course {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    width: 15rem;
-    height: 11rem;
-  }
-  .student-population {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    align-items: center;
-  }
-  .student-population p {
-    display: flex;
-    /* flex-wrap: wrap; */
-    align-items: center;
-    gap: 3px;
-  }
-  .upload {
-    display: flex;
-    justify-content: left;
-    width: 30rem;
-    flex-wrap: wrap;
-    gap: 1.0rem;
-  }
-  .upload-container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color: #EEEBF9;
-    padding: 1.7rem;
-    border-radius: 5px;
-  }
-  .upload-doc button {
-    text-align: center;
-    padding: .3rem;
-    border: none;
-    background-color: gray;
-    color: #fff;
-    border-radius: 3px;
-  }
-
-  .applicants_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-    column-gap: 2.5rem;
-    width: 70vw;
-    height: 70vh;
-  }
-  .applicants_box {
-    padding: 2rem;
-  }
-/*============================= MEDIA QUERIES ====================*/
-@media (max-width:1200px) {
-    .about-img {
-        height: 23rem;
-        width: 20rem;
-    }
-    .programmes-details {
-        gap: 1.8rem;
-    }
-    .programme {
-        width: 16rem;
-    }
-    .result-table, .ledger-table  {
-        width: 60vw;
-        overflow-x: auto;
-        
-    }
-  
-}
-@media (max-width:991px) {
-    .about {
-        width: 90vw;
-     }
-     .title {
-        font-size: 1.2rem;
-     }
-    .about-img {
-        height: 22rem;
-        width: 16rem;
-    }
-    .about-container, .mission-vision {
-        min-width: 19rem;
-    }
-    .programmes-details {
-        gap: 1.6rem;
-    }
-    .programme {
-        width: 16rem;
-    }
-    .result-table, .ledger-table  {
-        width: 60vw;
-        overflow-x: auto;
-        
-    }
-    .bioDataForm form {
-        width: 55vw;
-      }
-      .bioDataForm form input {
-        width: 25vw;
-        min-width: 18rem;
-        
-       }
-       .submit-form button {
-        width: 25vw;
-        min-width: 18rem;
-      }
 }
 
 /*================== width:768px =============================*/
-@media (max-width:768px) {
-    .menu-overlay  {
-        position: fixed;
-        z-index: 999;
-        background-color: rgba(0, 0, 0, 0.5);
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        visibility: hidden;
-        opacity: 0;
-        transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-    .menu-overlay.active {
-        visibility: visible;
-        opacity: 1;
-    }
-    .navbar_List {
-      position: fixed;
-      right: -20rem;
-      /* visibility: hidden; */
-      width: 280px;
-      height: 100%;
-      top: 0;
-      background-color: #25166F;
-      z-index: 1000;
-      padding: 3rem 30px;
-      transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-    .open {
-        right: 0;
-    }
-    .navbar_List > .list_item {
-        margin-top: 1rem;
-        display: block;
-    }
-    .navbar_List > .list_item > a {
-       color: #ffffff;
-       padding: 12px 15px;
-       border-bottom: 1px solid #333;
-    }
-    .navbar_List > .list_item > .sub_menu {
-       width: 100%;
-       position: relative;
-       opacity: 1;
-       visibility: visible;
-       border: none;
-       background-color: transparent;
-       box-shadow: none;
-       transform: translateY(0);
-       padding-left: .5rem;
-       left: auto;
-       top: auto;
-       max-height: 0;
-       overflow: hidden;
-    }
-   
-    
-    .navbar_List > .list_item > .sub_menu > .list_item > a {
-        padding: 12px 15px;
-        color: #fff;
-       border-bottom: 1px solid #333;
-    }
-   
-.navbar_List > .dropdown > a {
-        display: flex;
-       justify-content: space-between;
-    }
-    .navbar_List > .list_item > a .plus::before,
-.navbar_List > .list_item > a .plus:after {
+@media (max-width: 768px) {
+  .menu-overlay {
+    position: fixed;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .menu-overlay.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  .navbar_List {
+    position: fixed;
+    right: -20rem;
+    /* visibility: hidden; */
+    width: 280px;
+    height: 100%;
+    top: 0;
+    background-color: #25166f;
+    z-index: 1000;
+    padding: 3rem 30px;
+    transition: all 2s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .open {
+    right: 0;
+  }
+  .navbar_List > .list_item {
+    margin-top: 1rem;
+    display: block;
+  }
+  .navbar_List > .list_item > a {
+    color: #ffffff;
+    padding: 12px 15px;
+    border-bottom: 1px solid #333;
+  }
+  .navbar_List > .list_item > .sub_menu {
+    width: 100%;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    transform: translateY(0);
+    padding-left: 0.5rem;
+    left: auto;
+    top: auto;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .navbar_List > .list_item > .sub_menu > .list_item > a {
+    padding: 12px 15px;
+    color: #fff;
+    border-bottom: 1px solid #333;
+  }
+
+  .navbar_List > .dropdown > a {
+    display: flex;
+    justify-content: space-between;
+  }
+  .navbar_List > .list_item > a .plus::before,
+  .navbar_List > .list_item > a .plus:after {
     background-color: #fff;
-}
-.navbar_List > .dropdown.active > a .plus::after  {
+  }
+  .navbar_List > .dropdown.active > a .plus::after {
     transform: translate(-50%, -50%) rotate(0deg);
-}
-    .navbar_List > .list_item {
-        display: block;
-    }
-    .open-nav-menu, .close-nav-menu {
-        display: flex;
-    }
-    .open-nav-menu .fa-bars {
-        color: #fff;
-    }
-    .title {
-        font-size: 1.1rem;
-     }
-    .about-img {
-        height: 22rem;
-        width: 18rem;
-    }
-    .about-container, .mission-vision {
-        min-width: 18rem;
-    }
-    .programmes-details {
-        gap: 1.4rem;
-    }
-    .programme {
-        width: 14rem;
-    }
-    .events {
-        width: 90vw;
-    }
-    .sidebar {
-        width: 78px;
-    }
-    .sidebar_toggle {
-        display: block;
-        position: absolute;
-        top: 1rem;
-        right: 1.7rem;
-        bottom: 2rem;
-        cursor: pointer;
-    }
-    .sidebar.open {
-        width: 250px;
-    }
-    .sidebar li a .link_name, .logout span  {
-        font-weight: 400;
-        white-space: nowrap;
-        pointer-events: none;
-        opacity: 0;
-    }
-    .sidebar.open li a .link_name {
-        opacity: 1;
-    }
-    .sidebar.open .logout span  {
-        opacity: 1;
-    }
-    .result-table, .ledger-table  {
-        width: 60vw;
-        overflow-x: visible;
-        
-    }
-    .bioDataForm form {
-        width: 55vw;
-      }
-      .bioDataForm form input, .submit-form button {
-        width: 25vw;
-        min-width: 18rem;
-        
-       }
-       .search-students .search-bar input[type=text] {
-        width: 100px; 
-       }
+  }
+  .navbar_List > .list_item {
+    display: block;
+  }
+  .open-nav-menu,
+  .close-nav-menu {
+    display: flex;
+  }
+  .open-nav-menu .fa-bars {
+    color: #fff;
+  }
+  .title {
+    font-size: 1.1rem;
+  }
+  .about-img {
+    height: 22rem;
+    width: 18rem;
+  }
+  .about-container,
+  .mission-vision {
+    min-width: 18rem;
+  }
+  .programmes-details {
+    gap: 1.4rem;
+  }
+  .programme {
+    width: 14rem;
+  }
+  .events {
+    width: 90vw;
+  }
+  .sidebar {
+    width: 78px;
+  }
+  .sidebar_toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1.7rem;
+    bottom: 2rem;
+    cursor: pointer;
+  }
+  .sidebar.open {
+    width: 250px;
+  }
+  .sidebar li a .link-name,
+  .logout span {
+    font-weight: 400;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+  }
+  .sidebar.open li a .link-name {
+    opacity: 1;
+  }
+  .sidebar.open .logout span {
+    opacity: 1;
+  }
+  .result-table,
+  .ledger-table {
+    width: 60vw;
+    overflow-x: visible;
+  }
+  .bioDataForm form {
+    width: 55vw;
+  }
+  .bioDataForm form input,
+  .submit-form button {
+    width: 25vw;
+    min-width: 18rem;
+  }
+  .search-students .search-bar input[type="text"] {
+    width: 100px;
+  }
 }
 /*================== width:600px =============================*/
-@media (max-width:600px) { 
-    .navbar_1 {
-        padding: 1.0rem 2.5rem;
-    
-    }
-    .home_banner_text {
-        width: 80vw;
-     }
-     .owl-dots {
-        left: 25%;
-        width: 45vw;
-    }
-.event {
+@media (max-width: 600px) {
+  .navbar_1 {
+    padding: 1rem 2.5rem;
+  }
+  .home_banner_text {
+    width: 80vw;
+  }
+  .owl-dots {
+    left: 25%;
+    width: 45vw;
+  }
+  .event {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-.contact-details form, .location-calendar iframe {
+  }
+  .contact-details form,
+  .location-calendar iframe {
     width: 18rem;
-}
-.result-table, .ledger-table  {
+  }
+  .result-table,
+  .ledger-table {
     width: 55vw;
     overflow-x: visible;
-    
-}
-.bioDataForm form {
+  }
+  .bioDataForm form {
     width: 50vw;
   }
-  .bioDataForm form input, .submit-form button {
+  .bioDataForm form input,
+  .submit-form button {
     width: 22vw;
     min-width: 17rem;
-    
-   }
+  }
 }
-@media (max-width:480px)  { 
-    .bioDataForm form {
-        width: 50vw;
-      }
-      .bioDataForm form input, .submit-form button {
-        width: 20vw;
-        min-width: 15rem;
-        
-       }
-    h1 {
-        font-size: 1.3rem;
-    }
-    .profile-text h2 {
-        font-size: 1.3rem; 
-    }
-    .search-students .search-bar input[type=text] {
-        width: 90px; 
-       }
+@media (max-width: 480px) {
+  .bioDataForm form {
+    width: 50vw;
+  }
+  .bioDataForm form input,
+  .submit-form button {
+    width: 20vw;
+    min-width: 15rem;
+  }
+  h1 {
+    font-size: 1.3rem;
+  }
+  .profile-text h2 {
+    font-size: 1.3rem;
+  }
+  .search-students .search-bar input[type="text"] {
+    width: 90px;
+  }
 }
 /*================== width:300px =============================*/
-@media (max-width:280px)  {
-    .navbar_1 {
-        padding: 1.0rem 1rem;
-    
-    }
-    .owl-dots {
-        left: 20%;
-        width: 55vw;
-    }
-    /* .about-TuCoE {
+@media (max-width: 280px) {
+  .navbar_1 {
+    padding: 1rem 1rem;
+  }
+  .owl-dots {
+    left: 20%;
+    width: 55vw;
+  }
+  /* .about-TuCoE {
         width: 21vw;
         min-width: 10rem;
     } */
-    .about-container, .mission-vision {
-        display: grid;
-        gap: 2rem;
-        width: 40vw;
-        min-width: 14rem;
-    }
-    .contact-details form, .location-calendar iframe {
-        width: 16rem;
-    }
-    .download-calendar {
-        width: 15rem;
-    }
-    .event-info button {
-       margin-left: 5px;
-    }
-    .bioDataForm form {
-        width: 50vw;
-      }
-      .bioDataForm form input, .submit-form button {
-        width: 19vw;
-        min-width: 13rem;
-        
-       }
+  .about-container,
+  .mission-vision {
+    display: grid;
+    gap: 2rem;
+    width: 40vw;
+    min-width: 14rem;
+  }
+  .contact-details form,
+  .location-calendar iframe {
+    width: 16rem;
+  }
+  .download-calendar {
+    width: 15rem;
+  }
+  .event-info button {
+    margin-left: 5px;
+  }
+  .bioDataForm form {
+    width: 50vw;
+  }
+  .bioDataForm form input,
+  .submit-form button {
+    width: 19vw;
+    min-width: 13rem;
+  }
 }

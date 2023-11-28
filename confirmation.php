@@ -11,7 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
      <title> Premier Nursing College</title>
+
 </head>
 <body>
     <nav class="navbar_1 ">
@@ -27,20 +29,20 @@
     </nav>
 
     <div class="contact-details student-login" style="margin: 3.4rem 0;">
-        <form action="">
+        <form id= "login_form" method="post">
             <h2>Confirmation Page</h2>
+            <div id="error_container">
+		</div>
+
          <div class="form-label">
              <label for="">Serial Number</label>
-             <input type="text">
+             <input type="text" name="serial_no">
          </div>
          <div class="form-label">
              <label for="">Pin</label>
-             <input type="password">
+             <input type="password" name="pin">
          </div>
-         <!-- <div class="forget-password" style=" margin-bottom: 1.0rem;">
-         <a href="resetPassword.html">Forgot your password?</a>
-        </div> -->
-         <button type="submit">Proceed</button>
+         <button type="submit" id="login_button" name="login_button">Proceed</button>
          <p style="text-align: center;">Already registered? <a href="#">Login</a></p>
         </form>
       </div>
@@ -53,6 +55,9 @@
      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
      <script src="./js/owl.carousel.min.js"></script>
      <script src="js/carousel.js"></script>
-     <script src="./js/app.js"></script>
+     <!-- <script src="./js/app.js"></script> -->
+     <script type="text/javascript" src="js/validation.min.js"></script>
+     <script type="text/javascript" src="js/confirmation.js"></script>
+     <script src="js/bootstrap.js"></script>
  </body>
  </html>
