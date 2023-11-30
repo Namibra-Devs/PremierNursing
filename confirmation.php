@@ -1,4 +1,9 @@
-
+<?php
+ if ( isset( $_COOKIE[ 'pin' ] ) && isset( $_COOKIE[ 'serial' ] ) ) {
+    header("Location: myDashboard.php");
+    exit;
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,20 +16,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Lobster+Two:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
      <title> Premier Nursing College</title>
 
 </head>
 <body>
     <nav class="navbar_1 ">
         <div class="logo">
-            <a href="index.html" style="color: gray; font-weight: 800; font-size: 1.1rem;">
+            <a href="#" style="color: gray; font-weight: 800; font-size: 1.1rem;">
                 Premier Nursing College
             </a>
         </div>
         <div class="portal">
             <a href="studentPortal.html" class="active-list-item">Student Portal</a>
-            <a href="./lecturersDashboard/lecturerLogin.html">Staff Portal</a>
+            <a href="#">Staff Portal</a>
         </div>
     </nav>
 

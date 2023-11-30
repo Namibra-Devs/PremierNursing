@@ -29,6 +29,7 @@ button a {
 .portal {
   display: flex;
   gap: 1rem;
+  cursor: pointer;
 }
 .portal a {
   color: black;
@@ -313,6 +314,12 @@ form button {
   padding: 1.5rem 0;
   width: 70vw;
 }
+
+.complete-biodata {
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 500;
+}
 .personalInfoMenuLinks {
   display: flex;
   gap: 3rem;
@@ -337,11 +344,24 @@ form button {
   padding-bottom: 1.5rem;
   border-bottom: 1px solid gray;
 }
+.profile-picture {
+  overflow: hidden;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
 .profile-picture img {
-  width: 7rem;
+  /* object-fit: cover; */
+}
+
+.portal-picture {
+  overflow: hidden;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
 }
 .portal-picture img {
-  width: 2.5rem;
+  /* width: 2.5rem; */
 }
 .profile-text * {
   padding-bottom: 0.4rem;
@@ -438,7 +458,8 @@ td:first-child {
   gap: 0.5rem;
   justify-content: space-between;
 }
-.submit-form button , .submit-form input{
+.submit-form button,
+.submit-form input {
   width: 27vw;
   min-width: 18rem;
 }
@@ -538,6 +559,15 @@ td:first-child {
 .applicants_box {
   padding: 2rem;
 }
+
+.submit-form {
+  justify-content: space-between;
+  margin-top: .5rem;
+  display: flex;
+  align-items: center;
+
+}
+
 /*============================= MEDIA QUERIES ====================*/
 @media (max-width: 1200px) {
   .about-img {
@@ -589,9 +619,18 @@ td:first-child {
     width: 25vw;
     min-width: 18rem;
   }
+
+  .submit-form {
+    justify-content: space-between;
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+
+  }
   .submit-form button {
     width: 25vw;
     min-width: 18rem;
+    float: right;
   }
 }
 

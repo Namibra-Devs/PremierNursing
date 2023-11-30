@@ -1,56 +1,139 @@
 <?php
-include_once('./inc/header.php');
-include_once('./inc/navbar.php');
-include_once('./inc/sidebar.php');
+$title = 'programmeChoice';
+include_once './inc/header.php';
+include_once './inc/navbar.php';
+include_once './inc/sidebar.php';
 ?>
     <div class="myDashboard">
-       <div class="personalInfoMenuLinks">
-        <a href="#">Biodata</a>
-        <a href="#">Examination History</a>
-        <a href="#" >Choice of Programme</a>
-        <a href="#">Uploads</a>
-        <a href="#" class="activePersonalLink">Summary</a>
-       </div>
+    <?php include_once './inc/navlinks.php'; ?>
        <div class="bioDataForm">
         <div class="form-instruction">
-        <h3>Choice of Programme</h3>
+        <h3>Preview</h3>
         </div>
-        <form action="">
-            <div class="choiceProgramme-container" style="background-color: #eeecec80; padding: 1rem;">
-            <div class="personal-title">
-                <label for="">Fisrt Choice</label>
-                <select name="" id="">
-                    <option value="">Select</option>
-                    <option value="">Nursing</option>
-                    <option value="">Midwifery</option>
-                    <option value="">Nutrition</option>
-                    <option value="">Medical Laboratory Technology</option>
-                   </select>
-            </div>
-            <div class="personal-title">
-                <label for="">Second Choice</label>
-               <select name="" id="">
-                <option value="">Select</option>
-                <option value="">Nursing</option>
-                <option value="">Midwifery</option>
-                <option value="">Nutrition</option>
-                <option value="">Medical Laboratory Technology</option>
-               </select>
-            </div>
-           </div>
+
+        <form>
+    <div class="personal-title">
+        <label for="first_choice">First Choice</label>
+        <select name="first_choice" id="first_choice">
+            <option value="">Select</option>
+            <?php
+            $query = 'SELECT * FROM programmechoices';
+            $result = mysqli_query($db, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" .
+                        $row['choiceName'] .
+                        "'>" .
+                        $row['choiceName'] .
+                        '</option>';
+                }
+            }
+            ?>
+        </select>
+    </div>
+    <div class="personal-title">
+        <label for="second_choice">Second Choice</label>
+        <select name="second_choice" id="second_choice">
+            <option value="">Select</option>
+            <?php
+            $query = 'SELECT * FROM programmechoices';
+            $result = mysqli_query($db, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<option value='" .
+                        $row['choiceName'] .
+                        "'>" .
+                        $row['choiceName'] .
+                        '</option>';
+                }
+            }
+            ?>
+        </select>
+    </div>
             <div class="submit-form" style="margin-top: .5rem;">
-                <button type="submit" style="background-color: #dbdada;">
-                    <a href="previewExamHistory.html" style="color: #000;">Previous</a>
+                <button style="background-color: #dbdada;">
+                    <a href="summary.php?preview=examhistory" style="color: #000;">Previous</a>
                 </button>
-                <button type="submit" style="background-color: #dbdada;">
-                    <a href="programmeChoice.html" style="color: #000;">Next</a>
+                <button id="saveChoicesBtn" style="background-color: #dbdada;">
+                    <a href="summary.php?preview=uploads" style="color: #000;">Next</a>
                 </button>
             </div>
         </form>
       </div>
     </div>
 </div>
- 
-    <script src="./js/app.js"></script>
+<script>
+    $(document).ready(function() {
+        
+        $('#saveChoicesBtn').on('click', function(event) {
+            event.preventDefault();
+            // console.log("Working...");
+            var firstChoice = $('#first_choice').val();
+            var secondChoice = $('#second_choice').val();
+            const pagename = "programmechoices"
+
+            $.ajax({
+                url: 'handler/process.php',
+                type: 'POST',
+                data: {
+                    pagename,
+                    first_choice: firstChoice,
+                    second_choice: secondChoice
+                },
+                success: function (result) {
+                    console.log({result});
+
+if (result.includes("200")){
+  swal({
+      title: "Successful!",
+      text: "Programme choices saved successfully!",
+      type: "success"
+  });
+//             setTimeout(function() {
+//               window.location.href = "summary.php";
+// }, 2000);
+
+}else if (result.includes("17")){
+  swal({
+      title: "Success",
+      text: "Programme choices updated successfully!",
+      type: "success"
+  });
+  setTimeout(function() {
+    window.location.href = "summary.php?preview=uploads";
+}, 2000);
+
+}else if (result.includes("401")){
+  swal({
+      title: "Error!",
+      text: "Canditate is not logged in!",
+      type: "error"
+  });
+  setTimeout(function() {
+    window.location.href = "confirmation.php";
+}, 2000);
+}else{
+  swal({
+      title: "Error!",
+      text: "Server Error. Please Try Again!",
+      type: "error"
+  });
+//             setTimeout(function() {
+//               window.location.href = "summary.php";
+// }, 2000);
+}
+
+                },
+                error: function(xhr, status, error) {
+                    // Handle error
+                    console.error(xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
+    <!-- <script src="./js/app.js"></script> -->
 </body>
 </html>

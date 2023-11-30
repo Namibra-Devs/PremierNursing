@@ -23,8 +23,6 @@ $resultGrades = mysqli_query($db, $queryGrades) or die(mysqli_error($db));
 
 ?>
 
-
-
 <script type="text/javascript">
 $(document).on("click", ".o-level", function (event) {
     event.preventDefault();
@@ -35,15 +33,15 @@ $(document).on("click", ".o-level", function (event) {
 
     // Loop through each subject and grade element
     $('.subjects').each(function() {
-        subjects.push($(this).val()); // Push subject value into the subjects array
+        subjects.push($(this).val());
     });
 
     $('.grades-1').each(function() {
-        grades_1.push($(this).val()); // Push grade value into the grades array
+        grades_1.push($(this).val());
     });
 
     $('.grades-2').each(function() {
-        grades_2.push($(this).val()); // Push grade value into the grades array
+        grades_2.push($(this).val());
     });
 
     var grades = {};
@@ -63,6 +61,7 @@ for (var i = 0; i < subjects.length; i++) {
 
     var result = JSON.stringify(grades);
 
+    var pagename = document.getElementById('exam_history').value;
     var exambody_1 = document.getElementById('exambody_1').value;
     var exambody_2 = document.getElementById('exambody_2').value;
     var examindex_1 = document.getElementById('examindex_1').value;
@@ -80,6 +79,7 @@ for (var i = 0; i < subjects.length; i++) {
    examindex = '[' + examindex.join(', ') + ']'
 
     var dataToSend = {
+      pagename,
       result,
        exambody,
        examindex,
@@ -87,26 +87,42 @@ for (var i = 0; i < subjects.length; i++) {
     };
 
     console.log(dataToSend);
-    // return;
-
-    // Send data to process.php using AJAX
     $.ajax({
         type: 'POST',
         url: "handler/process.php",
-        // url: "index-1.php",
         data: dataToSend,
         success: function (result) {
-          // console.log(!!result);
-          if (result){
+            console.log(result);
+            // return;
+          if (result.includes("200")){
             swal({
                 title: "Successful!",
-                text: result,
+                text: "Examination history saved succesfully!",
                 type: "success"
             });
             setTimeout(function() {
               window.location.href = "programmechoice.php";
 }, 2000);
 
+          }else if(result.includes("17")){
+            swal({
+                title: "Successful!",
+                text: "Examination history updated succesfully!",
+                type: "success"
+            });
+            setTimeout(function() {
+              window.location.href = "programmechoice.php";
+}, 2000);
+          
+          }else if(result.includes("401")){
+            swal({
+                title: "Error!",
+                text: "Canditate is not logged in!",
+                type: "error"
+            });
+            setTimeout(function() {
+              window.location.href = "confirmation.php";
+}, 2000);
           }
 
         },
@@ -121,7 +137,9 @@ for (var i = 0; i < subjects.length; i++) {
     <?php include_once('./inc/navlinks.php') ?>
        <div class="dashboard-result">
         <div class="result-table" style="overflow-x: auto;">
+        <h3>Examination History</h3>
         <form>
+            <input type="hidden" id="exam_history" value="examhistory" name="exam_history">
             <table border="1">
                 <tr>
                   <th style="width:10%"></th>
@@ -215,10 +233,9 @@ foreach ($rowsSubjects as $subject) {
               </table>
               <div class="submit-form" style="margin-top: .5rem;">
                 <button type="submit" style="background-color: #dbdada;">
-                    <a href="personalInfo.html" style="color: #000;">Previous</a>
+                    <a href="personalInfo.php" style="color: #000;">Previous</a>
                 </button>
                 <button class='o-level'>Save and Continue</button>
-                <!-- <input type="button" value="Save and Continue"> -->
             </div>
             </form>
         </div>

@@ -22,7 +22,8 @@ $('document').ready(function() {
 	});	   
 	/* Handling login functionality */
 	function submitForm() {		
-		var data = $("#login_form").serialize();;				
+		var data = $("#login_form").serialize();
+		console.log({data});		
 		 $.ajax({				
 			type : 'POST',
 			url  : 'handler/confirmation_handler.php',
@@ -34,7 +35,7 @@ $('document').ready(function() {
 		success : function(response){	
 			console.log(response);				
 				if(response == "ok"){									
-					$("#login_button").text('Details verified sucessfully!');
+					$("#login_button").text('Verification successful!');
 					setTimeout(' window.location.href = "personalInfo.php"; ',500);
 				} 
 				else if(response=="member"){									

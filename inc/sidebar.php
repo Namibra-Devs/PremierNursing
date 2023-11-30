@@ -5,20 +5,20 @@
   </div>
   <ul class="sidebar-list">
     <li class="active-sidebar-list">
-      <a href="StudentDashboard.html" class=" active active-li">
+      <a href="myDashboard.php" class=" active active-li">
           <img class="active-li" src="./images/home.png" alt="">
           <span class="link-name">Dashboard</span>
       </a>
    </li>
     <li>
-      <a href="lecturerDashboard.html">
+      <a href="personalInfo.php">
           <img src="./images/record.png" alt="">
           <span class="link-name">Student's Biodata</span>
       </a>
    </li>
 
    <div class="logout">
-      <a href="studentSignup.html">
+      <a href="#">
           <img src="./images/Logout.png" alt="">
           <span> Logout</span>
       </a>
