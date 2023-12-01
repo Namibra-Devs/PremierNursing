@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 01, 2023 at 07:11 AM
+-- Generation Time: Dec 01, 2023 at 07:17 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -395,18 +395,6 @@ CREATE TABLE `students` (
   `isSubmitted` varchar(50) NOT NULL DEFAULT '0',
   `status` varchar(50) NOT NULL DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `students`
---
-
-INSERT INTO `students` (`id`, `username`, `surname`, `firstName`, `middleName`, `email`, `mobileNumber`, `password`, `Serial`, `Pin`, `registrationDate`, `isSubmitted`, `status`) VALUES
-(1, 'itpapp.site', 'Abdulsamad', '', '', 'abdulsamadbalogun25@gmail.com', '', '12345678', '', '', '2023-11-30 18:05:55', '0', 'pending'),
-(2, 'r24r24r', 'r24r23r', 'Zainab Oyindamola', '', 'Zainabbalogun866@gmail.com', '2348050363172', '12345678', '', '', '2023-11-30 18:09:07', '0', 'pending'),
-(3, 'r24r24rewfwef', 'r24r23r', 'Zainab Oyindamola', 'efefwefre', 'Zainabbaelogun866@gmail.com', '2348050363172', '12345678', '', '', '2023-11-30 18:11:06', '0', 'pending'),
-(4, '1111113', 'Abdulsamad', 'Dev', 'r44f4', 'abdulsamadbalogun26@gmail.com', '08117084647', '12345678', '123456789', '123456789', '2023-11-30 18:14:52', '1', 'pending'),
-(5, 'itpsite', 'Balogun', 'Zainab Oyindamola', '', 'Zainabbaloegun866@gmail.com', '2348050363172', '12345678', '123456789', '123456789', '2023-11-30 18:28:48', '1', 'pending'),
-(6, 'abdulsamadbalogun25@gmail.com', 'fwfgrwgwrg', 'Balogun', 'gregwrgwr', 'abdulsameadbalogun25@gmail.com', '2348050363172', '12345678', '123456789', '123456789', '2023-11-30 18:30:10', '1', 'pending');
 
 -- --------------------------------------------------------
 
