@@ -21,7 +21,7 @@ include_once './inc/sidebar.php';
                         <div class="upload-doc">
                             <div class="upload-container">
                                 <input type="file" name="passport" style="display: none;">
-                                <img style="width: 2rem; margin: 0 auto;" src="" alt="">
+                                <img style="width: 2rem; margin: 0 auto;" src="images/upload.png" alt="passport">
                                 <h3>Drop File Here</h3>
                             </div>
                             <button class="upload-btn">Select Image</button>
@@ -33,8 +33,8 @@ include_once './inc/sidebar.php';
                         </div>
                         <div class="upload-doc">
                             <div class="upload-container">
-                                <input type="file" name="birth-cert" style="display: none;">
-                                <img style="width: 2rem; margin: 0 auto;" src="" alt="">
+                                <input type="file" name="birth_cert" style="display: none;">
+                                <img style="width: 2rem; margin: 0 auto;" src="images/upload.png" alt="birth_cert">
                                 <h3>Drop File Here</h3>
                             </div>
                             <button class="upload-btn">Select Image</button>
@@ -47,7 +47,7 @@ include_once './inc/sidebar.php';
                         <div class="upload-doc">
                             <div class="upload-container">
                                 <input type="file" name="affidavit" style="display: none;">
-                                <img style="width: 2rem; margin: 0 auto;" src="" alt="">
+                                <img style="width: 2rem; margin: 0 auto;" src="images/upload.png" alt="affidavit">
                                 <h3>Drop File Here</h3>
                             </div>
                             <button class="upload-btn">Select Image</button>
@@ -66,7 +66,8 @@ include_once './inc/sidebar.php';
 
     <script>
         $(document).ready(function() {
-            const uploadedFiles = {};
+          var passport = '', birth_cert = '', affidavit = '';
+          const uploadedFiles = {passport, birth_cert, affidavit};
 
             $('.upload-container .upload-btn').on('click', function(e) {
                 e.preventDefault();
@@ -79,7 +80,6 @@ include_once './inc/sidebar.php';
                     var formData = new FormData();
                     formData.append('file', file);
                     formData.append('display', '1');
-                    // console.log({formData});
 
                     $.ajax({
                         url: 'handler/process.php',
@@ -89,7 +89,6 @@ include_once './inc/sidebar.php';
                         processData: false,
                         success: function(response) {
                           console.log({response});
-                          // return;
                             var filePath = response;
                             var h3 = parentUpload.find('h3');
                             h3.addClass('hidden');
@@ -115,10 +114,20 @@ include_once './inc/sidebar.php';
                 text: "Files saved to the database successfully!",
                 type: "success"
             });
-//             setTimeout(function() {
-//               window.location.href = "summary.php?preview=biodata";
-// }, 2000);
-
+            setTimeout(function() {
+              window.location.href = "summary.php?preview=biodata";
+}, 2000);
+ 
+          }else if (result.includes("17")){
+            swal({
+                title: "Successful!",
+                text: "Files updated successfully!",
+                type: "success"
+            });
+            setTimeout(function() {
+              window.location.href = "summary.php?preview=biodata";
+}, 2000);
+          
           }else if (result.includes("401")){
             swal({
                 title: "Error!",
@@ -134,9 +143,6 @@ include_once './inc/sidebar.php';
                 text: "Server Error. Please Try Again!",
                 type: "error"
             });
-//             setTimeout(function() {
-//               window.location.href = "summary.php";
-// }, 2000);
           }
 
         },

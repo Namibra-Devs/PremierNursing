@@ -5,16 +5,6 @@ include_once('./inc/header.php');
 include_once('./inc/navbar.php');
 include_once('./inc/sidebar.php');
 
-if(isset($_COOKIE['pin'])&&$_COOKIE['serial']){
-	
-$pin=$_COOKIE['pin'];
-$serial=$_COOKIE['serial'];
-
-}else{
-	//  header('location:index.php');
-      // exit;
-}
-
 $querySubjects = "SELECT id, Name FROM schoolsubjects";
 $resultSubjects = mysqli_query($db, $querySubjects) or die(mysqli_error($db));
 

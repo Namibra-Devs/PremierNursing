@@ -52,7 +52,7 @@ try {
             $town = isset( $_POST[ 'town' ] ) ? trim( $_POST[ 'town' ] ) : '';
             $lga = isset( $_POST[ 'lga' ] ) ? trim( $_POST[ 'lga' ] ) : '';
             $address = isset( $_POST[ 'address' ] ) ? trim( $_POST[ 'address' ] ) : '';
-            $personal_info = isset( $_POST[ 'personalinfo' ] ) ? trim( $_POST[ 'personalinfo' ] ) : '';
+            $faculty = isset( $_POST[ 'faculty' ] ) ? trim( $_POST[ 'faculty' ] ) : '';
             $department = isset( $_POST[ 'department' ] ) ? trim( $_POST[ 'department' ] ) : '';
             $level = isset( $_POST[ 'level' ] ) ? trim( $_POST[ 'level' ] ) : '';
             $degree = isset( $_POST[ 'degree' ] ) ? trim( $_POST[ 'degree' ] ) : '';
@@ -65,8 +65,8 @@ try {
                 if ( $rowcount == 0 )
  {
 
-                    $query = "INSERT INTO BioData (title, surname, other_name, matric, gender, email, phone, dob, pob, marital_status, rel, country, state, town, lga, address, personal_info, department, level, degree, serial, pin) 
-                VALUES ('$title', '$surname', '$other_name', '$matric', '$gender', '$email', '$phone', '$dob', '$pob', '$marital_status', '$rel', '$country', '$state', '$town', '$lga', '$address', '$personal_info', '$department', '$level', '$degree', '$serial', '$pin')";
+                    $query = "INSERT INTO BioData (title, surname, other_name, matric, gender, email, phone, dob, pob, marital_status, rel, country, state, town, lga, address, faculty, department, level, degree, serial, pin) 
+                VALUES ('$title', '$surname', '$other_name', '$matric', '$gender', '$email', '$phone', '$dob', '$pob', '$marital_status', '$rel', '$country', '$state', '$town', '$lga', '$address', '$faculty', '$department', '$level', '$degree', '$serial', '$pin')";
 
                     $result = $db->query( $query );
                     if ( $result ) {
@@ -76,7 +76,7 @@ try {
                     }
 
                 } else {
-                    $updateQuery = "UPDATE BioData SET title='$title', surname='$surname', other_name='$other_name', matric='$matric', gender='$gender', email='$email', phone='$phone', dob='$dob', pob='$pob', marital_status='$marital_status', rel='$rel', country='$country', state='$state', town='$town', lga='$lga', address='$address', personal_info='$personal_info', department='$department', level='$level', degree='$degree' WHERE serial='$serial' && pin='$pin'";
+                    $updateQuery = "UPDATE BioData SET title='$title', surname='$surname', other_name='$other_name', matric='$matric', gender='$gender', email='$email', phone='$phone', dob='$dob', pob='$pob', marital_status='$marital_status', rel='$rel', country='$country', state='$state', town='$town', lga='$lga', address='$address', faculty='$faculty', department='$department', level='$level', degree='$degree' WHERE serial='$serial' && pin='$pin'";
 
                     if ($db->query($updateQuery) === TRUE) {
                         echo '17';
@@ -185,9 +185,6 @@ echo "Error updating record: " . $db->error;
 
 
 }
-
-
-
 
 
     } else {

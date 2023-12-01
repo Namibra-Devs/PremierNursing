@@ -4,21 +4,39 @@ include_once('./inc/header.php');
 include_once('./inc/navbar.php');
 include_once('./inc/sidebar.php');
 
-if(isset($_COOKIE['pin'])&&$_COOKIE['serial']){
-	
-$pin=$_COOKIE['pin'];
-$serial=$_COOKIE['serial'];
-
-}else{
-	//  header('location:index.php');
-      // exit;
-}
-
 $querySubjects = "SELECT id, Name FROM schoolsubjects";
 $resultSubjects = mysqli_query($db, $querySubjects) or die(mysqli_error($db));
 
 $queryGrades = "SELECT id, Name FROM schoolgrades";
 $resultGrades = mysqli_query($db, $queryGrades) or die(mysqli_error($db));
+
+
+$olevel = "SELECT * FROM Olevel";
+$result = $db->query($olevel);
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $examBody = $row['ExamBody'];
+        $examDate = $row['ExamDate'];
+        $examIndex = $row['ExamIndex'];
+        $results = $row['Results'];
+        $serial = $row['Serial'];
+        $pin = $row['Pin'];
+    }
+} else {
+    echo "0 results";
+}
+
+$examBody = json_decode($examBody);
+print_r($examBody);
+$examIndex = json_decode($examIndex);
+print_r($examIndex);
+$examDate = json_decode($examDate);
+print_r($examIndex);
+$results = json_decode($results, true);
+echo print_r($results);
+
+
 
 ?>
 
@@ -73,9 +91,11 @@ for (var i = 0; i < subjects.length; i++) {
    var examdate = [examdate_1, examdate_2];
    var examindex = [examindex_1, examindex_2];  
 
-   exambody = '[' + exambody.join(', ') + ']'
-   examdate = '[' + examdate.join(', ') + ']'
-   examindex = '[' + examindex.join(', ') + ']'
+   exambody =`["${exambody_1}" , "${exambody_2}"]`;
+   examdate =`["${examdate_1}" , "${examdate_2}"]`;
+   examindex =`["${examindex_1}" , "${examindex_2}"]`;
+  //  examdate = '[' + examdate.join(', ') + ']'
+  //  examindex = '[' + examindex.join(', ') + ']'
 
     var dataToSend = {
       pagename,
@@ -148,25 +168,25 @@ for (var i = 0; i < subjects.length; i++) {
                 <tr>
                   <td></td>
                   <td><b>Index Number</b></td>
-                  <td><input type="number" id="examindex_1" placeholder="Enter Index Number"></td>
-                  <td><input type="number" id="examindex_2" placeholder="Enter Index Number"></td>
+                  <td><input type="number" id="examindex_1" placeholder="Enter Index Number" value="<?= $examIndex[0] ? $examIndex[0] : "" ?>"></td>
+                  <td><input type="number" id="examindex_2" placeholder="Enter Index Number" value="<?= $examIndex[1] ? $examIndex[1] : "" ?>"></td>
                 </tr>
                 <tr>
                   <td></td>
                   <td><b>Exam Year</b></td>
-                  <td><input type="date" id="examdate_1" name=""></td>
-                  <td><input type="date" id="examdate_2" name=""></td>
+                  <td><input type="date" id="examdate_1" name="" value="<?= $examDate[0] ? $examDate[0] : ""?>"></td>
+                  <td><input type="date" id="examdate_2" name="" value="<?= $examDate[1] ? $examDate[1] : ""?>"></td>
                 </tr>
                 <tr>
                   <td></td>
                   <td><b>Exam body</b></td>
                   <td><select name="" id="exambody_1">
-                    <option value="WAEC">WAEC</option>
-                    <option value="NABTEX">NABTEX</option>
+                    <option value="<?= $examBody[0] ? $examBody[0] : "WAEC"?>"><?= $examBody[0] ? $examBody[0] : "WAEC"?></option>
+                    <option value="<?= $examBody[1] ? $examBody[1] : "NABTEX"?>"><?= $examBody[1] ? $examBody[1] : "NABTEX"?></option>
                   </select></td>
                   <td><select name="" id="exambody_2">
-                  <option value="WAEC">WAEC</option>
-                    <option value="NABTEX">NABTEX</option>
+                  <option value="<?= $examBody[0] ? $examBody[0] : "WAEC"?>"><?= $examBody[0] ? $examBody[0] : "WAEC"?></option>
+                    <option value="<?= $examBody[1] ? $examBody[1] : "NABTEX"?>"><?= $examBody[1] ? $examBody[1] : "NABTEX"?></option>
                   </select></td>
                 </tr>
                 <tr>
@@ -188,7 +208,16 @@ while ($row = mysqli_fetch_assoc($resultGrades)) {
     $rowsGrades[] = $row;
 }
 
+
+$indexCount = count($results);
+$index = 0;
+
 foreach ($rowsSubjects as $subject) {
+    $subjectNames = array_keys($results);
+    $subjectName = $subjectNames[$index] ?? '';
+
+    $subjectGrades = $results[$subjectName] ?? null;
+
     echo "<tr>";
     echo "<td>" . $subject['id'] . "</td>";
     echo "<td>";
@@ -196,7 +225,8 @@ foreach ($rowsSubjects as $subject) {
     echo "<option value=''>Select</option>";
 
     foreach ($rowsSubjects as $subjectOption) {
-        echo "<option value='" . $subjectOption['Name'] . "'>" . $subjectOption['Name'] . "</option>";
+        $selected = ($subjectOption['Name'] === $subjectName) ? 'selected' : '';
+        echo "<option value='" . $subjectOption['Name'] . "' $selected>" . $subjectOption['Name'] . "</option>";
     }
 
     echo "</select>";
@@ -207,7 +237,8 @@ foreach ($rowsSubjects as $subject) {
     echo "<option value=''>Select</option>";
 
     foreach ($rowsGrades as $grade) {
-        echo "<option value='" . $grade['Name'] . "'>" . $grade['Name'] . "</option>";
+        $selected = ($subjectGrades && $subjectGrades['grades_1'] === $grade['Name']) ? 'selected' : '';
+        echo "<option value='" . $grade['Name'] . "' $selected>" . $grade['Name'] . "</option>";
     }
 
     echo "</select>";
@@ -218,22 +249,26 @@ foreach ($rowsSubjects as $subject) {
     echo "<option value=''>Select</option>";
 
     foreach ($rowsGrades as $grade) {
-        echo "<option value='" . $grade['Name'] . "'>" . $grade['Name'] . "</option>";
+        $selected = ($subjectGrades && $subjectGrades['grades_2'] === $grade['Name']) ? 'selected' : '';
+        echo "<option value='" . $grade['Name'] . "' $selected>" . $grade['Name'] . "</option>";
     }
 
     echo "</select>";
     echo "</td>";
 
     echo "</tr>";
+
+    $index++;
 }
 ?>
 
+
               </table>
               <div class="submit-form" style="margin-top: .5rem;">
-                <button type="submit" style="background-color: #dbdada;">
+                <button type="button" style="background-color: #dbdada;">
                     <a href="summary.php?preview=biodata" style="color: #000;">Previous</a>
                 </button>
-                <button class="o-level" type="submit" style="background-color: #dbdada;">
+                <button class="o-level" style="background-color: #dbdada;">
                     <a href="summary.php?preview=programmechoice" style="color: #000;">Next</a>
                 </button>
             </div>

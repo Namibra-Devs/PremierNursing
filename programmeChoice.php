@@ -11,7 +11,7 @@ include_once './inc/sidebar.php';
         <h3>Choice of Programme</h3>
         </div>
 
-        <form>
+<form>
     <div class="personal-title">
         <label for="first_choice">First Choice</label>
         <select name="first_choice" id="first_choice">
@@ -87,13 +87,22 @@ include_once './inc/sidebar.php';
 if (result.includes("200")){
   swal({
       title: "Successful!",
-      text: "Programme choices saved successfully!!",
+      text: "Programme choices saved successfully!",
       type: "success"
   });
-//             setTimeout(function() {
-//               window.location.href = "summary.php";
-// }, 2000);
+            setTimeout(function() {
+              window.location.href = "uploads.php";
+}, 2000);
 
+}else if (result.includes("17")){
+  swal({
+      title: "Success",
+      text: "Programme choices updated successfully!",
+      type: "success"
+  });
+  setTimeout(function() {
+    window.location.href = "uploads.php";
+}, 2000);
 }else if (result.includes("401")){
   swal({
       title: "Error!",
@@ -109,12 +118,8 @@ if (result.includes("200")){
       text: "Server Error. Please Try Again!",
       type: "error"
   });
-//             setTimeout(function() {
-//               window.location.href = "summary.php";
-// }, 2000);
 }
 
-                    // You can display a success message or perform further actions here
                 },
                 error: function(xhr, status, error) {
                     // Handle error

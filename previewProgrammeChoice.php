@@ -11,7 +11,7 @@ include_once './inc/sidebar.php';
         <h3>Preview</h3>
         </div>
 
-        <form>
+<!-- <form>
     <div class="personal-title">
         <label for="first_choice">First Choice</label>
         <select name="first_choice" id="first_choice">
@@ -60,7 +60,65 @@ include_once './inc/sidebar.php';
                     <a href="summary.php?preview=uploads" style="color: #000;">Next</a>
                 </button>
             </div>
-        </form>
+</form> -->
+
+<?php
+
+    $query = "SELECT * FROM schoolchoices WHERE Serial = '$serial' AND Pin = '$pin'";
+    $result = mysqli_query($db, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $firstChoice = $row['FirstChoice'] ?? '';
+        $secondChoice = $row['SecondChoice'] ?? '';
+    } else {
+        $firstChoice = '';
+        $secondChoice = '';
+    }
+?>
+<form>
+    <div class="personal-title">
+        <label for="first_choice">First Choice</label>
+        <select name="first_choice" id="first_choice">
+            <option value="">Select</option>
+            <?php
+            $query = 'SELECT * FROM programmechoices';
+            $result = mysqli_query($db, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $selected = ($firstChoice === $row['choiceName']) ? 'selected' : '';
+                    echo "<option value='" . $row['choiceName'] . "' $selected>" . $row['choiceName'] . '</option>';
+                }
+            }
+            ?>
+        </select>
+    </div>
+    <div class="personal-title">
+        <label for="second_choice">Second Choice</label>
+        <select name="second_choice" id="second_choice">
+            <option value="">Select</option>
+            <?php
+            $query = 'SELECT * FROM programmechoices';
+            $result = mysqli_query($db, $query);
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $selected = ($secondChoice === $row['choiceName']) ? 'selected' : '';
+                    echo "<option value='" . $row['choiceName'] . "' $selected>" . $row['choiceName'] . '</option>';
+                }
+            }
+            ?>
+        </select>
+    </div>
+    <div class="submit-form">
+        <button style="background-color: #dbdada;">
+            <a href="examinationHistory.php" style="color: #000;">Previous</a>
+        </button>
+        <button id="saveChoicesBtn" type="button">Save and Continue</button>
+    </div>
+</form>
+
       </div>
     </div>
 </div>

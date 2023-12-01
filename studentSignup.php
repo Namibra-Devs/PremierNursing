@@ -1,5 +1,5 @@
 <?php
- if ( isset( $_COOKIE[ 'pin' ] ) && isset( $_COOKIE[ 'serial' ] ) ) {
+ if ( isset( $_COOKIE[ 'username' ] ) ) {
     header("Location: myDashboard.php");
     exit;
  }

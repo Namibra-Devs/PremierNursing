@@ -21,7 +21,7 @@ include_once './inc/sidebar.php';
                         <div class="upload-doc">
                             <div class="upload-container">
                                 <input type="file" name="passport" style="display: none;">
-                                <img style="width: 2rem; margin: 0 auto;" src="" alt="">
+                                <img style="width: 2rem; margin: 0 auto;" src="" alt="passport">
                                 <h3>Drop File Here</h3>
                             </div>
                             <button class="upload-btn">Select Image</button>
@@ -33,8 +33,8 @@ include_once './inc/sidebar.php';
                         </div>
                         <div class="upload-doc">
                             <div class="upload-container">
-                                <input type="file" name="birth-cert" style="display: none;">
-                                <img style="width: 2rem; margin: 0 auto;" src="" alt="">
+                                <input type="file" name="birth_cert" style="display: none;">
+                                <img style="width: 2rem; margin: 0 auto;" src="" alt="birth_cert">
                                 <h3>Drop File Here</h3>
                             </div>
                             <button class="upload-btn">Select Image</button>
@@ -47,7 +47,7 @@ include_once './inc/sidebar.php';
                         <div class="upload-doc">
                             <div class="upload-container">
                                 <input type="file" name="affidavit" style="display: none;">
-                                <img style="width: 2rem; margin: 0 auto;" src="" alt="">
+                                <img style="width: 2rem; margin: 0 auto;" src="" alt="affidavit">
                                 <h3>Drop File Here</h3>
                             </div>
                             <button class="upload-btn">Select Image</button>
@@ -66,7 +66,9 @@ include_once './inc/sidebar.php';
 </div>
 <script>
         $(document).ready(function() {
-            const uploadedFiles = {};
+            var passport = '', birth_cert = '', affidavit = '';
+
+            const uploadedFiles = {passport, birth_cert, affidavit};
 
             $('.upload-container .upload-btn').on('click', function(e) {
                 e.preventDefault();
@@ -89,7 +91,6 @@ include_once './inc/sidebar.php';
                         processData: false,
                         success: function(response) {
                           console.log({response});
-                          // return;
                             var filePath = response;
                             var h3 = parentUpload.find('h3');
                             h3.addClass('hidden');
@@ -117,9 +118,6 @@ include_once './inc/sidebar.php';
                 text: "Files saved to the database successfully!",
                 type: "success"
             });
-//             setTimeout(function() {
-//               window.location.href = "summary.php";
-// }, 2000);
 
           }else if (result.includes("17")){
             swal({
@@ -127,9 +125,6 @@ include_once './inc/sidebar.php';
                 text: "Files updated database successfully!",
                 type: "success"
             });
-//             setTimeout(function() {
-//               window.location.href = "myDashboard.php";
-// }, 2000);
           }else if (result.includes("18")){
             swal({
                 title: "Successful!",
@@ -154,9 +149,6 @@ include_once './inc/sidebar.php';
                 text: "Server Error. Please Try Again!",
                 type: "error"
             });
-//             setTimeout(function() {
-//               window.location.href = "summary.php";
-// }, 2000);
           }
 
         },
@@ -171,5 +163,23 @@ include_once './inc/sidebar.php';
             });
         });
     </script>
+
+<?php
+
+    $query = "SELECT * FROM uploads WHERE Serial = '$serial' AND Pin = '$pin'";
+    $result = mysqli_query($db, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+
+        $fileArray = json_decode($row['fileArray'], true);
+
+        foreach ($fileArray as $key => $value) {
+            echo '<script>document.querySelector("img[alt=' . $key . ']").src = "' . $value . '";</script>';
+        }
+    }
+
+?>
+
 </body>
 </html>

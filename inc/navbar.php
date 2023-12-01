@@ -28,7 +28,7 @@ if (isset($_COOKIE['pin']) && isset($_COOKIE['serial'])) {
                 Premier Nursing College
             </a>
         </div>
-        <div class="portal" style="display: flex; align-items: center;">
+        <div class="portal" style="display: flex; align-items: center;" onclick="window.location.href='myDashboard.php'">
             <div class="portal-picture">
             <img width="35px" height="35px" src="<?= $uploads['passport'] ? $uploads['passport'] : "./images/Frame 3293.png"?>" alt="profile-picture">
             </div>
