@@ -103,13 +103,19 @@ $(document).on("click", ".bio", function (event) {
             </div>
             <div class="form-group">
                 <div>
-                <label for="">Reg./Matric No</label>
-               <input name="matric" type="text">
-               </div>
-
-                <div>
                 <label for="">Gender</label>
-               <input name="gender" type="text">
+                <select name="gender" id="">
+                    <?php
+                        $genderOptions =  ["male", "female"];
+                        foreach ($genderOptions as $option) {
+                          echo "<option value='" . $option . "'>" . $option . "</option>";
+                      }
+                    ?>
+                  </select>
+               </div>
+               <div>
+                    <label for="">Local Government Area</label>
+                    <input name="lga" type="text">
                </div>
 
             </div>
@@ -140,12 +146,26 @@ $(document).on("click", ".bio", function (event) {
             <div class="form-group">
                 <div>
                 <label for="">Marital Status</label>
-               <input name="marital_status" type="text">
+               <select name="marital_status" id="">
+                    <?php
+                        $maritalStatuses = ["single", "married", "divorced", "widowed"];
+                        foreach ($maritalStatuses as $option) {
+                          echo "<option value='" . $option . "'>" . $option . "</option>";
+                      }
+                    ?>
+                  </select>
                </div>
 
                 <div>
                 <label for="">Religion</label>
-               <input name="rel" type="text">
+               <select name="rel" id="">
+                    <?php
+                        $religionOptions = ["islam", "christianity", "other"];
+                        foreach ($religionOptions as $option) {
+                          echo "<option value='" . $option . "'>" . $option . "</option>";
+                      }
+                    ?>
+                  </select>
                </div>
 
             </div>
@@ -168,15 +188,12 @@ $(document).on("click", ".bio", function (event) {
                <input name="town" type="text">
                </div>
 
-                <div>
+                <!-- <div>
                 <label for="">Local Government Area</label>
                <input name="lga" type="text">
-               </div>
+               </div> -->
 
             </div>
-            <!-- <div class="form-group">
-            </div> -->
-           
             <h2>Departmental Information</h2>
             <div class="form-group">
                 <div>

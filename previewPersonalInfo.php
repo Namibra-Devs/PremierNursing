@@ -55,9 +55,6 @@ $(document).on("click", ".bio", function (event) {
                 text: "Server Error. Please Try Again!",
                 type: "error"
             });
-//             setTimeout(function() {
-//               window.location.href = "confirmation.php";
-// }, 2000);
           }
 
         },
@@ -76,138 +73,9 @@ $(document).on("click", ".bio", function (event) {
         <h3>Preview</h3>
         <p>All fields are required <span style="color: red;">*</span></p> 
       </div>
-        <!-- <form id="biodata-form">
-            <input type="hidden" name="pagename" value="personalinfo">
-            <div class="form-group">
-               <div>
-                <label for="">Title</label>
-               <input name="title" type="text">
-               </div>
-               <div>
-                <label for="">Permanent Home Address</label>
-               <input name="address" type="text">
-               </div>
-            </div>
-            <div class="form-group">
-                <div>
-                <label for="">Surname</label>
-               <input name="surname" type="text">
-               </div>
-
-                <div>
-                <label for="">Other name</label>
-               <input name="other_name" type="text">
-               </div>
-               
-            </div>
-            <div class="form-group">
-                <div>
-                <label for="">Reg./Matric No</label>
-               <input name="matric" type="text">
-               </div>
-
-                <div>
-                <label for="">Gender</label>
-               <input name="gender" type="text">
-               </div>
-
-            </div>
-            <div class="form-group">
-                <div>
-                <label for="">Email</label>
-               <input name="email" type="email">
-               </div>
-
-                <div>
-                <label for="">Phone Number</label>
-               <input name="phone" type="text">
-               </div>
-
-            </div>
-            <div class="form-group">
-                <div>
-                <label for="">Date of Birth</label>
-               <input name="dob" type="date">
-               </div>
-
-                <div>
-                <label for="">Place of Birth</label>
-               <input name="pob" type="text">
-               </div>
-
-            </div>
-            <div class="form-group">
-                <div>
-                <label for="">Marital Status</label>
-               <input name="marital_status" type="text">
-               </div>
-
-                <div>
-                <label for="">Religion</label>
-               <input name="rel" type="text">
-               </div>
-
-            </div>
-            <div class="form-group">
-                <div>
-                <label for="">Nationality</label>
-               <input name="country" type="text">
-               </div>
-
-                <div>
-                <label for="">State of Origin</label>
-               <input name="state" type="text">
-               </div>
-
-            </div>
-           
-            <div class="form-group">
-                <div>
-                <label for="">Home Town</label>
-               <input name="town" type="text">
-               </div>
-
-                <div>
-                <label for="">Local Government Area</label>
-               <input name="lga" type="text">
-               </div>
-
-            </div>
-            <h2>Departmental Information</h2>
-            <div class="form-group">
-                <div>
-                <label for="">Faculty</label>
-               <input name="personal_info" type="text">
-               </div>
-
-                <div>
-                <label for="">Department</label>
-               <input name="department" type="text">
-               </div>
-            </div>
-            <div class="form-group">
-                <div>
-                <label for="">Level</label>
-               <input name="level" type="text">
-               </div>
-
-                <div>
-                <label for="">Degree Sought</label>
-               <input name="degree" type="text">
-               </div>
-            </div>
-            <div class="submit-form bio">
-                <button type="submit" style="background-color: #dbdada; float: right;">
-                    <a style="color: #000;">Next</a>
-                </button>
-            </div>
-        </form> -->
 
         <?php
-// Establish database connection
 
-
-    // Fetch data from the BioData table based on the serial and pin
     $query = "SELECT * FROM BioData WHERE serial = '$serial' AND pin = '$pin'";
     $result = $db->query($query);
 
@@ -215,7 +83,6 @@ $(document).on("click", ".bio", function (event) {
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
 
-        // Assign fetched data to variables
         $title = $row['title'];
         $surname = $row['surname'];
         $other_name = $row['other_name'];
@@ -236,8 +103,6 @@ $(document).on("click", ".bio", function (event) {
         $department = $row['department'];
         $level = $row['level'];
         $degree = $row['degree'];
-
-        // Output HTML form with populated values
         ?>
         <form id="biodata-form">
             <input type="hidden" name="pagename" value="personalinfo">
@@ -263,13 +128,23 @@ $(document).on("click", ".bio", function (event) {
             </div>
             <div class="form-group">
                 <div>
-                    <label for="matric">Reg./Matric No</label>
-                    <input name="matric" type="text" value="<?php echo $row['matric'] ?? ''; ?>">
+                    <label for="gender">Gender</label>
+                    <select name="gender" id="">
+                    <?php
+                        $savedOption = $row['gender'];
+                        $genderOptions =  ["male", "female"];
+                        foreach ($genderOptions as $option) {
+                          $selected = ($option === $savedOption) ? 'selected' : '';
+                          echo "<option value='" . $option . "' $selected>" . $option . "</option>";
+                      }
+                    ?>
+
+                  </select>
                 </div>
                 <div>
-                    <label for="gender">Gender</label>
-                    <input name="gender" type="text" value="<?php echo $row['gender'] ?? ''; ?>">
-                </div>
+                    <label for="">Local Government Area</label>
+                <input name="lga" type="text">
+               </div>
             </div>
             <div class="form-group">
                 <div>
@@ -294,11 +169,31 @@ $(document).on("click", ".bio", function (event) {
             <div class="form-group">
                 <div>
                     <label for="marital_status">Marital Status</label>
-                    <input name="marital_status" type="text" value="<?php echo $row['marital_status'] ?? ''; ?>">
+                    <select name="marital_status" id="">
+                    <?php
+                        $savedOption = $row['marital_status'];
+                        $maritalStatuses = ["single", "married", "divorced", "widowed"];
+                        foreach ($maritalStatuses as $option) {
+                          $selected = ($option === $savedOption) ? 'selected' : '';
+                          echo "<option value='" . $option . "' $selected>" . $option . "</option>";
+                      }
+                    ?>
+
+                  </select>
                 </div>
                 <div>
                     <label for="rel">Religion</label>
-                    <input name="rel" type="text" value="<?php echo $row['rel'] ?? ''; ?>">
+                    <select name="rel" id="">
+                    <?php
+                        $savedOption = $row['rel'];
+                        $religionOptions = ["islam", "christianity", "other"];
+                        foreach ($religionOptions as $option) {
+                          $selected = ($option === $savedOption) ? 'selected' : '';
+                          echo "<option value='" . $option . "' $selected>" . $option . "</option>";
+                      }
+                    ?>
+
+                  </select>
                 </div>
             </div>
             <div class="form-group">
@@ -316,10 +211,10 @@ $(document).on("click", ".bio", function (event) {
                     <label for="town">Home Town</label>
                     <input name="town" type="text" value="<?php echo $row['town'] ?? ''; ?>">
                 </div>
-                <div>
+                <!-- <div>
                     <label for="lga">Local Government Area</label>
                     <input name="lga" type="text" value="<?php echo $row['lga'] ?? ''; ?>">
-                </div>
+                </div> -->
             </div>
             <h2>Departmental Information</h2>
             <div class="form-group">

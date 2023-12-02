@@ -32,6 +32,8 @@ if ( isset( $_COOKIE[ 'pin' ] ) && isset( $_COOKIE[ 'serial' ] ) ) {
                     VALUES ('$username', '$surname', '$firstName', '$middleName', '$email', '$mobileNumber', '$password', '$serial', '$pin')";
 
             if ( $db->query( $sql ) === TRUE ) {
+                
+                setcookie("username",$username,time()+(60*60*24*7), '/');	
                 echo '200';
             } else {
                 echo 'Error: ' . $sql . '<br>' . $db->error;

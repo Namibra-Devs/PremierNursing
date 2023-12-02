@@ -64,10 +64,28 @@ include_once './inc/sidebar.php';
       </div>
     </div>
 </div>
+<?php
+
+    $query = "SELECT * FROM uploads WHERE Serial = '$serial' AND Pin = '$pin'";
+    $result = mysqli_query($db, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+
+        $fileArray = json_decode($row['fileArray'], true);
+
+        foreach ($fileArray as $key => $value) {
+            echo '<script>document.querySelector("img[alt=' . $key . ']").src = "' . $value . '";</script>';
+        }
+    }
+
+?>
 <script>
         $(document).ready(function() {
-            var passport = '', birth_cert = '', affidavit = '';
-
+            var passport = $("img[alt='passport']").attr("src");
+            var birth_cert = $("img[alt='birth_cert']").attr("src");
+            var affidavit = $("img[alt='affidavit']").attr("src");  
+            
             const uploadedFiles = {passport, birth_cert, affidavit};
 
             $('.upload-container .upload-btn').on('click', function(e) {
@@ -96,6 +114,7 @@ include_once './inc/sidebar.php';
                             h3.addClass('hidden');
                             parentUpload.find('img').attr('src', filePath).show();
                             uploadedFiles[fileInput.attr('name')] = filePath;
+                            console.log({uploadedFiles});
                         }
                     });
                 });
@@ -164,22 +183,7 @@ include_once './inc/sidebar.php';
         });
     </script>
 
-<?php
 
-    $query = "SELECT * FROM uploads WHERE Serial = '$serial' AND Pin = '$pin'";
-    $result = mysqli_query($db, $query);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $row = mysqli_fetch_assoc($result);
-
-        $fileArray = json_decode($row['fileArray'], true);
-
-        foreach ($fileArray as $key => $value) {
-            echo '<script>document.querySelector("img[alt=' . $key . ']").src = "' . $value . '";</script>';
-        }
-    }
-
-?>
 
 </body>
 </html>

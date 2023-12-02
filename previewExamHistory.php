@@ -4,6 +4,8 @@ include_once('./inc/header.php');
 include_once('./inc/navbar.php');
 include_once('./inc/sidebar.php');
 
+$examBodyOptions  = ["WAEC" , "NABTEX"];
+
 $querySubjects = "SELECT id, Name FROM schoolsubjects";
 $resultSubjects = mysqli_query($db, $querySubjects) or die(mysqli_error($db));
 
@@ -26,15 +28,15 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-
+print_r($examBody);
 $examBody = json_decode($examBody);
 print_r($examBody);
 $examIndex = json_decode($examIndex);
-print_r($examIndex);
+// print_r($examIndex);
 $examDate = json_decode($examDate);
-print_r($examIndex);
+// print_r($examIndex);
 $results = json_decode($results, true);
-echo print_r($results);
+// echo print_r($results);
 
 
 
@@ -94,8 +96,6 @@ for (var i = 0; i < subjects.length; i++) {
    exambody =`["${exambody_1}" , "${exambody_2}"]`;
    examdate =`["${examdate_1}" , "${examdate_2}"]`;
    examindex =`["${examindex_1}" , "${examindex_2}"]`;
-  //  examdate = '[' + examdate.join(', ') + ']'
-  //  examindex = '[' + examindex.join(', ') + ']'
 
     var dataToSend = {
       pagename,
@@ -181,12 +181,23 @@ for (var i = 0; i < subjects.length; i++) {
                   <td></td>
                   <td><b>Exam body</b></td>
                   <td><select name="" id="exambody_1">
-                    <option value="<?= $examBody[0] ? $examBody[0] : "WAEC"?>"><?= $examBody[0] ? $examBody[0] : "WAEC"?></option>
-                    <option value="<?= $examBody[1] ? $examBody[1] : "NABTEX"?>"><?= $examBody[1] ? $examBody[1] : "NABTEX"?></option>
+                    <?php
+                        $savedOption = $examBody[0] ? $examBody[0] : "";
+                        foreach ($examBodyOptions as $examOption) {
+                          $selected = ($examOption === $savedOption) ? 'selected' : '';
+                          echo "<option value='" . $examOption . "' $selected>" . $examOption . "</option>";
+                      }
+                    ?>
+
                   </select></td>
                   <td><select name="" id="exambody_2">
-                  <option value="<?= $examBody[0] ? $examBody[0] : "WAEC"?>"><?= $examBody[0] ? $examBody[0] : "WAEC"?></option>
-                    <option value="<?= $examBody[1] ? $examBody[1] : "NABTEX"?>"><?= $examBody[1] ? $examBody[1] : "NABTEX"?></option>
+                  <?php
+                        $savedOption = $examBody[1] ? $examBody[1] : "";
+                        foreach ($examBodyOptions as $examOption) {
+                          $selected = ($examOption === $savedOption) ? 'selected' : '';
+                          echo "<option value='" . $examOption . "' $selected>" . $examOption . "</option>";
+                      }
+                    ?>
                   </select></td>
                 </tr>
                 <tr>

@@ -438,7 +438,7 @@ td:first-child {
   width: 65vw;
 }
 .bioDataForm form input,
-.personal-title select {
+.personal-title select, .bioDataForm form select {
   width: 31vw;
   min-width: 18rem;
   border: 1px solid #25166f;
