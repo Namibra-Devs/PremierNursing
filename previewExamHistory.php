@@ -28,15 +28,12 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
-print_r($examBody);
+
 $examBody = json_decode($examBody);
-print_r($examBody);
 $examIndex = json_decode($examIndex);
-// print_r($examIndex);
 $examDate = json_decode($examDate);
-// print_r($examIndex);
 $results = json_decode($results, true);
-// echo print_r($results);
+
 
 
 

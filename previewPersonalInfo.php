@@ -99,10 +99,6 @@ $(document).on("click", ".bio", function (event) {
         $town = $row['town'];
         $lga = $row['lga'];
         $address = $row['address'];
-        $personal_info = $row['faculty'];
-        $department = $row['department'];
-        $level = $row['level'];
-        $degree = $row['degree'];
         ?>
         <form id="biodata-form">
             <input type="hidden" name="pagename" value="personalinfo">
@@ -143,7 +139,7 @@ $(document).on("click", ".bio", function (event) {
                 </div>
                 <div>
                     <label for="">Local Government Area</label>
-                <input name="lga" type="text">
+                <input name="lga" type="text" value="<?php echo $row['lga'] ?? ''; ?>">
                </div>
             </div>
             <div class="form-group">
@@ -216,7 +212,7 @@ $(document).on("click", ".bio", function (event) {
                     <input name="lga" type="text" value="<?php echo $row['lga'] ?? ''; ?>">
                 </div> -->
             </div>
-            <h2>Departmental Information</h2>
+            <!-- <h2>Departmental Information</h2>
             <div class="form-group">
                 <div>
                     <label for="faculty">Faculty</label>
@@ -236,7 +232,7 @@ $(document).on("click", ".bio", function (event) {
                     <label for="degree">Degree Sought</label>
                     <input name="degree" type="text" value="<?php echo $row['degree'] ?? ''; ?>">
                 </div>
-            </div>
+            </div> -->
             <div class="submit-form bio">
                 <button type="submit" style="background-color: #dbdada; float: right;">
                     <a style="color: #000;">Next</a>

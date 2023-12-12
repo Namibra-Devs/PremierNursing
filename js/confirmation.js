@@ -32,11 +32,10 @@ $('document').ready(function() {
 				$("#error-container").fadeOut();
 				$("#login_button").text(' Loading ...');
 			},
-		success : function(response){	
-			console.log(response);				
+		success : function(response){			
 				if(response == "ok"){									
 					$("#login_button").text('Verification successful!');
-					setTimeout(' window.location.href = "personalInfo.php"; ',500);
+					setTimeout(' window.location.href = "StudentSignup.php"; ',500);
 				} 
 				else if(response=="member"){									
 					$("#login_button").html('<img src="js/ajax-loader.gif" /> &nbsp; Signing In ...');

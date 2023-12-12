@@ -18,7 +18,7 @@
    </li>
 
    <div class="logout">
-      <a href="#">
+      <a>
           <img src="./images/Logout.png" alt="">
           <span> Logout</span>
       </a>
@@ -27,3 +27,29 @@
 
   
 </div>
+<script type="text/javascript">
+$(document).on("click", ".logout", function (event) {
+    event.preventDefault();
+    $.ajax({
+        type: 'GET',
+        url: "handler/signout_handler.php",
+        success: function (result) {
+
+          if (result == "200"){
+            swal({
+                title: "Successful",
+                text: "Logout successful!",
+                type: "success"
+            });
+            setTimeout(function() {
+              window.location.href = "studentSignin.php";
+}, 2000);
+          }
+        },
+        error: function (xhr, status, error) {
+            console.error(xhr.responseText);
+        }
+    });
+
+});
+</script>

@@ -194,7 +194,7 @@ $(document).on("click", ".bio", function (event) {
                </div> -->
 
             </div>
-            <h2>Departmental Information</h2>
+            <!-- <h2>Departmental Information</h2>
             <div class="form-group">
                 <div>
                 <label for="">Faculty</label>
@@ -216,7 +216,7 @@ $(document).on("click", ".bio", function (event) {
                 <label for="">Degree Sought</label>
                <input name="degree" type="text">
                </div>
-            </div>
+            </div> -->
             <div  class="submit-form bio">
                 <button type="submit"><a href="examinationHistory.php">Save and Continue</a></button>
             </div>

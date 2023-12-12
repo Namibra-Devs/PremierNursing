@@ -297,6 +297,7 @@ form button {
 .logout {
   position: absolute;
   bottom: 2rem;
+  cursor: pointer;
   /* z-index: 99; */
 }
 .logout a {
