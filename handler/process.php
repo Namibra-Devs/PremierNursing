@@ -134,7 +134,30 @@ if (isset($_POST['files']) && json_decode($_POST['files'], true) && isset($_POST
                 $updateQuery = "UPDATE students SET isSubmitted = 1 WHERE Pin = '$pin' AND Serial = '$serial'";
     
                 if ($db->query($updateQuery) === TRUE) {
+
+                $getMaxMatricQuery = "SELECT COALESCE(MAX(CAST(SUBSTRING(MatricNumber, 8) AS UNSIGNED)), 0) AS maxMatric
+                FROM students
+                WHERE SUBSTRING(MatricNumber, 1, 7) = 'NRS/23/'";
+
+                $result = $db->query($getMaxMatricQuery);
+                if ($result) {
+                $row = $result->fetch_assoc();
+                $maxMatric = $row['maxMatric'];
+                $nextMatric = sprintf("%04d", intval($maxMatric) + 1); 
+                $newMatricNumber = 'NRS/23/' . $nextMatric;
+
+                // Update the student table with the new matriculation number
+                $updateMatricQuery = "UPDATE students SET MatricNumber = '$newMatricNumber' WHERE Pin = '$pin' AND Serial = '$serial'";
+                if ($db->query($updateMatricQuery) === TRUE) {
                     echo '18'; //Response code for successful submission
+                } else {
+                echo 'Error updating matriculation number: ' . $db->error;
+                }
+                } else {
+                echo 'Error fetching maximum matriculation number: ' . $db->error;
+                }
+
+                    // echo '18'; //Response code for successful submission
                 } else {
                     echo 'Error updating isSubmitted field: ' . $db->error;
                 }

@@ -548,10 +548,13 @@ td:first-child {
 }
 
 .applicants_container {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 20px; 
   margin-top: 2rem;
   column-gap: 2.5rem;
   width: 70vw;
