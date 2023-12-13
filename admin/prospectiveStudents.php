@@ -77,7 +77,7 @@ if ($result && mysqli_num_rows($result) > 0) {
         echo "<td>$secondChoice</td>";
         echo "<td style='$submissionStyle'>$submissionStatus</td>";
         echo "<td id='admission-status' style='$admissionStyle'>$admissionStatus</td>";
-        echo "<td class='admission-action'><i class='fa fa-list-dots'></i>
+        echo "<td class='admission-action'><i class='action-btn fa fa-list-dots'></i>
                 <ul class='action-details'>
                     <li id='admit' style='color: #0BBD5D;'>Admit</li>
                     <li id='reject' style='color: #B42828;'>Reject</li>
@@ -134,7 +134,7 @@ mysqli_close($db);
 
 
 
-    <!-- <script src="./js/app.js"></script> -->
+    <script src="../js/app.js"></script>
     <script src="js/signout.js"></script>
 </body>
 </html>
