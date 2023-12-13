@@ -11,57 +11,6 @@ include_once './inc/sidebar.php';
         <h3>Preview</h3>
         </div>
 
-<!-- <form>
-    <div class="personal-title">
-        <label for="first_choice">First Choice</label>
-        <select name="first_choice" id="first_choice">
-            <option value="">Select</option>
-            <?php
-            $query = 'SELECT * FROM programmechoices';
-            $result = mysqli_query($db, $query);
-
-            if ($result && mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<option value='" .
-                        $row['choiceName'] .
-                        "'>" .
-                        $row['choiceName'] .
-                        '</option>';
-                }
-            }
-            ?>
-        </select>
-    </div>
-    <div class="personal-title">
-        <label for="second_choice">Second Choice</label>
-        <select name="second_choice" id="second_choice">
-            <option value="">Select</option>
-            <?php
-            $query = 'SELECT * FROM programmechoices';
-            $result = mysqli_query($db, $query);
-
-            if ($result && mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<option value='" .
-                        $row['choiceName'] .
-                        "'>" .
-                        $row['choiceName'] .
-                        '</option>';
-                }
-            }
-            ?>
-        </select>
-    </div>
-            <div class="submit-form" style="margin-top: .5rem;">
-                <button style="background-color: #dbdada;">
-                    <a href="summary.php?preview=examhistory" style="color: #000;">Previous</a>
-                </button>
-                <button id="saveChoicesBtn" style="background-color: #dbdada;">
-                    <a href="summary.php?preview=uploads" style="color: #000;">Next</a>
-                </button>
-            </div>
-</form> -->
-
 <?php
 
     $query = "SELECT * FROM schoolchoices WHERE Serial = '$serial' AND Pin = '$pin'";
