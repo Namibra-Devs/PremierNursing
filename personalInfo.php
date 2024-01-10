@@ -23,7 +23,7 @@ $(document).on("click", ".bio", function (event) {
           if (result == "200"){
             swal({
                 title: "Successful!",
-                text: "Examination History Saved Successfully!",
+                text: "Biodata Saved Successfully!",
                 type: "success"
             });
             setTimeout(function() {
@@ -33,7 +33,7 @@ $(document).on("click", ".bio", function (event) {
 }else if (result.includes("17")){
             swal({
                 title: "Successful",
-                text: "Examination History Saved Successfully!",
+                text: "Biodata Saved Successfully!",
                 type: "success"
             });
             setTimeout(function() {
