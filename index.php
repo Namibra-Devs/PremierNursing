@@ -1,4 +1,4 @@
 <?php
-// header('Location: confirmation.php');
-exit;
+header('Location: confirmation.php');
+// exit;
 ?>
