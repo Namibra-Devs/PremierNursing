@@ -4,11 +4,15 @@ include_once('./inc/navbar.php');
 include_once('./inc/sidebar.php');
 ?>
     <div class="myDashboard">
+    <div class="toggle-bars">
+        <i class="fa fa-bars"></i>
+       </div>
        <div class="personalInfoMenuLinks">
         <a href="personalInfo.html">Biodata</a>
         <a href="examinationHistory.html">Examination History</a>
         <a href="programmeChoice.html" class="activePersonalLink">Choice of Programme</a>
         <a href="#">Uploads</a>
+        <a href="#">Refree</a>
         <a href="#">Summary</a>
        </div>
        <div class="bioDataForm">

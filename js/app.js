@@ -4,8 +4,7 @@ window.addEventListener("load", () => {
 
 closeBtn.addEventListener("click", () => {
 sidebar.classList.toggle("open");
-btnChange();
-  
+btnChange(); 
 })
 btnChange = () => {
   if(sidebar.classList.contains("open")) {
@@ -16,9 +15,21 @@ btnChange = () => {
 }
 })
 
-const admiAction = document.querySelector(".fa-list-dots"); 
-const actionDetails = document.querySelector(".action-details"); 
+// const admiAction = document.querySelector(".fa-list-dots"); 
+// const actionDetails = document.querySelector(".action-details"); 
 
-admiAction.addEventListener("click", () => {
-actionDetails.classList.toggle("action-details-display")
-})
+// admiAction.addEventListener("click", () => {
+// actionDetails.classList.toggle("action-details-display")
+// })
+
+const toggleBars = document.querySelector(".toggle-bars .fa-bars"),
+      personalInfoMenuLinks = document.querySelector(".personalInfoMenuLinks"); 
+    
+toggleBars.addEventListener("click", () => {
+        personalInfoMenuLinks.classList.toggle("openInfoLinks");
+        if(personalInfoMenuLinks.classList.contains("openInfoLinks")) {
+          toggleBars.classList.replace("fa-bars", "fa-times");
+         } else {
+          toggleBars.classList.replace("fa-times", "fa-bars");
+         }
+        })

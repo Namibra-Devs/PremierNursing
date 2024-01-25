@@ -5,12 +5,17 @@ include_once('./inc/sidebar.php');
 
 ?>
     <div class="myDashboard">
+    <div class="toggle-bars">
+        <i class="fa fa-bars"></i>
+       </div>
        <div class="personalInfoMenuLinks">
         <a href="personalInfo.html" class="activePersonalLink">Biodata</a>
-        <a href="examinationHistory.html">Examination History</a>
+        <a href="examinationHistory.html">Education background</a>
         <a href="#">Choice of Programme</a>
         <a href="#">Uploads</a>
+        <a href="#">Referee</a>
         <a href="#">Summary</a>
+        <a href="#">Declaration</a>
        </div>
       <div class="bioDataForm">
         <div class="form-instruction">

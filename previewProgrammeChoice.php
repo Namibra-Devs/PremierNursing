@@ -4,6 +4,9 @@ include_once('./inc/navbar.php');
 include_once('./inc/sidebar.php');
 ?>
     <div class="myDashboard">
+    <div class="toggle-bars">
+        <i class="fa fa-bars"></i>
+       </div>
        <div class="personalInfoMenuLinks">
         <a href="#">Biodata</a>
         <a href="#">Examination History</a>
