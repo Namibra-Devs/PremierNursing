@@ -734,6 +734,9 @@ table input, table select {
         align-items: center;
         margin-left: -5rem;
        } 
+    .DeclarationForm {
+        margin-left: 3rem;
+    }
     .bioDataForm form {
         width: 55vw;
         margin: -3rem;

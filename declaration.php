@@ -17,7 +17,7 @@ include_once('./inc/sidebar.php');
         <a href="#">Summary</a>
         <a href="#">Declaration</a>
        </div>
-      <div class="bioDataForm">
+      <div class="bioDataForm DeclarationForm" style="margin-left: 1rem;">
         <div class="form-instruction">
         <h3>Declaration</h3>
         <p>I hereby declare that all information given above is true</p> 
